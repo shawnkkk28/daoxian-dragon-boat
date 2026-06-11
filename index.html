@@ -3,767 +3,870 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>道州龙船 · 百龙出征 一桨千年 — 湖南永州道县龙舟赛</title>
-<meta name="description" content="国家级非物质文化遗产——道州龙船习俗。每年端午，百龙出征潇水河。湖南永州道县：龙舟之乡、濂溪故里、天下谷源。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<title>2026 道州龙船 · 潇水竞渡 | 湖南永州道县龙舟赛</title>
+<link rel="icon" type="image/png" href="龙舟素材/logo_透明.png">
 <style>
-:root{
-  --ink:#16181d;
-  --ink-2:#22252d;
-  --paper:#f7f3ea;
-  --paper-2:#efe8da;
-  --red:#c8392b;
-  --red-deep:#9b2218;
-  --gold:#d8a94e;
-  --gold-light:#f0d28a;
-  --jade:#3c6e5f;
-  --text:#3a3631;
-  --text-light:#7a736a;
-  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
-  --art:"ZCOOL XiaoWei","Noto Serif SC","Songti SC",serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--serif);color:var(--text);background:var(--paper);overflow-x:hidden;line-height:1.8}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--red);color:#fff}
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:var(--paper-2)}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--red),var(--gold));border-radius:5px}
+  :root {
+    --red: #c8362e;
+    --red-deep: #a32820;
+    --cream: #faf5ec;
+    --cream-deep: #f3ead9;
+    --ink: #4a3f35;
+    --ink-soft: #8a7d6f;
+    --white: #ffffff;
+    --gold: #c9a063;
+    --radius: 22px;
+    --shadow: 0 18px 50px rgba(120, 90, 60, .14);
+    --ease: cubic-bezier(.22, .8, .26, .99);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, "PingFang SC", "SF Pro Display", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; }
+  ::selection { background: var(--red); color: #fff; }
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  /* ====== 顶部导航 ====== */
+  header.nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 5vw;
+    background: rgba(250, 245, 236, .72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(200, 54, 46, .08);
+    transition: all .4s var(--ease);
+  }
+  .nav .logo {
+    font-size: 19px; font-weight: 700; letter-spacing: 2px;
+    color: var(--red); display: flex; align-items: center; gap: 10px;
+  }
+  .nav .logo img {
+    height: 42px; width: auto;
+    filter: drop-shadow(0 3px 8px rgba(200, 54, 46, .25));
+  }
+  .nav ul { display: flex; gap: 32px; list-style: none; }
+  .nav ul a {
+    text-decoration: none; color: var(--ink); font-size: 14.5px; font-weight: 500;
+    letter-spacing: 1px; position: relative; padding: 4px 0; transition: color .3s;
+  }
+  .nav ul a::after {
+    content: ""; position: absolute; left: 0; bottom: -2px; height: 2px; width: 0;
+    background: var(--red); border-radius: 2px; transition: width .35s var(--ease);
+  }
+  .nav ul a:hover { color: var(--red); }
+  .nav ul a:hover::after { width: 100%; }
+  @media (max-width: 820px) { .nav ul { display: none; } }
 
-/* ========== 导航 ========== */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;transition:.4s}
-nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:10px 5vw;box-shadow:0 4px 30px rgba(60,40,20,.12)}
-nav.scrolled .logo{color:var(--ink)}
-nav.scrolled .nav-links a{color:var(--text)}
-nav.scrolled .nav-links a:hover{color:var(--red)}
-nav.scrolled #menuBtn{color:var(--ink)}
-.logo{display:flex;align-items:center;gap:12px;color:#fff}
-.logo .mark{width:44px;height:44px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-family:var(--art);transform:rotate(-4deg);box-shadow:0 4px 14px rgba(200,57,43,.5)}
-.logo .name{font-size:20px;font-weight:700;letter-spacing:.18em}
-.logo .name small{display:block;font-size:10px;letter-spacing:.32em;color:var(--gold);font-weight:400}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{color:rgba(255,255,255,.85);font-size:15px;letter-spacing:.12em;position:relative;padding:4px 0;transition:color .3s}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold));transition:width .35s}
-.nav-links a:hover{color:var(--gold-light)}
-.nav-links a:hover::after{width:100%}
-#menuBtn{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+  /* ====== 侧边快速锚点导航 ====== */
+  .side-nav {
+    position: fixed; right: 26px; top: 50%; transform: translateY(-50%);
+    z-index: 99; display: flex; flex-direction: column; gap: 16px;
+  }
+  .side-nav a {
+    display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+    text-decoration: none;
+  }
+  .side-nav .label {
+    font-size: 12px; color: #fff; background: var(--red);
+    padding: 4px 12px; border-radius: 999px; letter-spacing: 2px;
+    opacity: 0; transform: translateX(8px); pointer-events: none;
+    transition: all .3s var(--ease); white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(200,54,46,.35);
+  }
+  .side-nav .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(200, 54, 46, .25);
+    border: 2px solid transparent;
+    transition: all .35s var(--ease);
+  }
+  .side-nav a:hover .label, .side-nav a.active .label { opacity: 1; transform: translateX(0); }
+  .side-nav a.active .dot { background: var(--red); transform: scale(1.35); box-shadow: 0 0 0 5px rgba(200,54,46,.15); }
+  @media (max-width: 820px) { .side-nav { right: 10px; } .side-nav .label { display: none; } }
 
-/* ========== Hero ========== */
-header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--ink)}
-.hero-bg{position:absolute;inset:-6%;background:url("龙舟素材/龙舟潇水俯瞰.jpeg") center/cover no-repeat;animation:kenburns 22s ease-in-out infinite alternate;filter:saturate(1.05)}
-@keyframes kenburns{from{transform:scale(1) translateY(0)}to{transform:scale(1.12) translateY(-2%)}}
-.hero-veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(22,24,29,.18) 0%,rgba(22,24,29,.62) 62%,rgba(22,24,29,.92) 100%)}
-#particles{position:absolute;inset:0;pointer-events:none}
-.hero-inner{position:relative;z-index:5;text-align:center;color:#fff;padding:0 20px;max-width:1000px}
-.hero-tag{display:inline-flex;align-items:center;gap:14px;border:1px solid rgba(240,210,138,.55);color:var(--gold-light);padding:8px 26px;border-radius:999px;font-size:14px;letter-spacing:.42em;text-indent:.42em;margin-bottom:34px;backdrop-filter:blur(4px);animation:fadeUp 1s .9s both}
-.hero-tag::before,.hero-tag::after{content:"";width:26px;height:1px;background:var(--gold)}
-h1.hero-title{font-family:var(--art);font-size:clamp(54px,9.5vw,124px);font-weight:900;line-height:1.12;letter-spacing:.08em;animation:fadeUp 1.1s 1.1s both}
-h1 .grad{background:linear-gradient(115deg,#fff 18%,var(--gold-light) 45%,var(--gold) 60%,#fff 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:220% auto;animation:shine 5s linear infinite}
-@keyframes shine{to{background-position:220% center}}
-.hero-sub{margin-top:26px;font-size:clamp(15px,2vw,21px);color:rgba(255,255,255,.88);letter-spacing:.22em;animation:fadeUp 1s 1.45s both}
-.hero-sub b{color:var(--gold-light)}
-.hero-cta{margin-top:48px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s 1.7s both}
-.btn{padding:15px 44px;font-size:16px;letter-spacing:.26em;text-indent:.26em;font-family:var(--serif);cursor:pointer;transition:.35s;position:relative;overflow:hidden}
-.btn-red{background:linear-gradient(135deg,var(--red),var(--red-deep));color:#fff;border:none;box-shadow:0 8px 28px rgba(200,57,43,.45)}
-.btn-red:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(200,57,43,.6)}
-.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.65)}
-.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:var(--gold);color:var(--gold-light);transform:translateY(-4px)}
-.hero-side{position:absolute;z-index:6;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;color:rgba(255,255,255,.5);letter-spacing:.5em;font-size:13px;display:flex;align-items:center;gap:14px}
-.hero-side.l{left:3.4vw}.hero-side.r{right:3.4vw}
-.hero-side::before{content:"";width:1px;height:74px;background:linear-gradient(rgba(216,169,78,0),var(--gold),rgba(216,169,78,0))}
-.scroll-hint{position:absolute;bottom:96px;left:50%;transform:translateX(-50%);z-index:6;color:rgba(255,255,255,.7);font-size:12px;letter-spacing:.34em;text-align:center;animation:fadeUp 1s 2.2s both}
-.scroll-hint .line{width:1px;height:44px;background:rgba(255,255,255,.5);margin:10px auto 0;position:relative;overflow:hidden}
-.scroll-hint .line::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--gold);animation:drop 1.8s ease-in-out infinite}
-@keyframes drop{to{top:110%}}
-.hero-waves{position:absolute;bottom:-2px;left:0;width:100%;z-index:7;line-height:0}
-.hero-waves svg{width:100%;height:90px;display:block}
-.wave{animation:waveMove 9s linear infinite}
-.wave.w2{animation-duration:13s;animation-direction:reverse;opacity:.6}
-.wave.w3{animation-duration:18s;opacity:.35}
-@keyframes waveMove{from{transform:translateX(0)}to{transform:translateX(-1200px)}}
+  /* ====== Hero ====== */
+  .hero {
+    position: relative; height: 100vh; min-height: 640px; overflow: hidden;
+  }
+  .hero .bg {
+    position: absolute; inset: -6% 0; background: url("龙舟素材/龙舟潇水俯瞰.jpeg") center 30%/cover no-repeat;
+    will-change: transform; transform: scale(1.05);
+    animation: heroZoom 9s var(--ease) forwards;
+  }
+  @keyframes heroZoom { to { transform: scale(1.12); } }
+  .hero .veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(60,30,20,.18) 0%, rgba(60,30,20,.05) 40%, rgba(250,245,236,0) 62%, var(--cream) 99%);
+  }
+  .hero .inner {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 0 6vw;
+  }
+  .hero .glass {
+    padding: clamp(36px, 5vw, 60px) clamp(30px, 6vw, 84px);
+    border-radius: 40px;
+    background: rgba(250, 245, 236, .5);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, .65);
+    box-shadow: 0 34px 90px rgba(60, 30, 20, .3), inset 0 1px 0 rgba(255, 255, 255, .8);
+  }
+  .hero .kicker-row {
+    display: flex; gap: 14px; justify-content: center; align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .hero .kicker.year { letter-spacing: 3px; text-indent: 3px; }
+  .hero .kicker {
+    display: inline-block;
+    font-size: clamp(16px, 1.6vw, 19px); letter-spacing: 9px; text-indent: 9px; font-weight: 700;
+    color: #fff; background: linear-gradient(135deg, var(--red), var(--red-deep));
+    padding: 12px 30px; border-radius: 999px;
+    box-shadow: 0 10px 28px rgba(200, 54, 46, .45);
+    opacity: 0; animation: rise 1.1s var(--ease) .2s forwards;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 9vw, 112px); font-weight: 800; letter-spacing: 14px; text-indent: 14px;
+    margin: 24px 0 16px; line-height: 1.12;
+    background: linear-gradient(110deg, #c89a3e 0%, #e8c25e 38%, #ffeeb0 50%, #e8c25e 62%, #c89a3e 100%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 14px rgba(110, 75, 25, .3));
+    opacity: 0; animation: rise 1.1s var(--ease) .45s forwards, shine 5.5s linear 1.6s infinite;
+  }
+  @keyframes shine {
+    0% { background-position: 110% 0; }
+    100% { background-position: -110% 0; }
+  }
+  .hero .sub {
+    font-size: clamp(18px, 2.4vw, 27px); font-weight: 600; letter-spacing: 7px; text-indent: 7px;
+    color: var(--red-deep);
+    opacity: 0; animation: rise 1.1s var(--ease) .7s forwards;
+  }
+  .hero .tags {
+    margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    opacity: 0; animation: rise 1.1s var(--ease) .95s forwards;
+  }
+  .hero .tags span {
+    font-size: clamp(15px, 1.4vw, 17px); font-weight: 600; letter-spacing: 3px;
+    padding: 13px 28px; border-radius: 999px;
+    color: var(--red); background: rgba(255, 255, 255, .82);
+    border: 1.5px solid rgba(200, 54, 46, .3);
+    box-shadow: 0 10px 26px rgba(120, 60, 40, .18);
+    transition: all .35s var(--ease);
+  }
+  .hero .tags span:hover {
+    background: var(--red); color: #fff; transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(200, 54, 46, .4);
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: translateY(0); } }
+  .hero .scroll-cue {
+    position: absolute; bottom: 70px; left: 50%; transform: translateX(-50%); z-index: 2;
+    color: var(--ink-soft); font-size: 12px; letter-spacing: 4px; text-align: center;
+    opacity: 0; animation: rise 1s var(--ease) 1.4s forwards;
+  }
+  .hero .scroll-cue .line {
+    width: 1.5px; height: 44px; margin: 10px auto 0; border-radius: 2px;
+    background: linear-gradient(var(--red), transparent);
+    animation: cue 1.8s ease-in-out infinite;
+  }
+  @keyframes cue { 0%,100% { transform: scaleY(.5); transform-origin: top; opacity:.4;} 50% { transform: scaleY(1); opacity:1;} }
 
-/* ========== 跑马灯 ========== */
-.marquee{background:var(--red-deep);color:#f7e9c4;overflow:hidden;padding:13px 0;border-top:1px solid rgba(240,210,138,.4);border-bottom:1px solid rgba(240,210,138,.4)}
-.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite;font-size:15px;letter-spacing:.22em}
-.marquee-track span{padding:0 34px;white-space:nowrap}
-.marquee-track span::after{content:"❖";margin-left:34px;color:var(--gold)}
-@keyframes marquee{to{transform:translateX(-50%)}}
+  /* ====== 通用版式 ====== */
+  section.block { padding: 110px 6vw; position: relative; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 64px; }
+  .sec-head .en {
+    font-size: 13px; letter-spacing: 6px; color: var(--red); font-weight: 700;
+    text-transform: uppercase;
+  }
+  .sec-head h2 {
+    font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; letter-spacing: 6px;
+    margin: 14px 0 16px; color: var(--ink);
+  }
+  .sec-head .desc { font-size: 16px; color: var(--ink-soft); letter-spacing: 1.5px; line-height: 1.9; max-width: 640px; margin: 0 auto; }
+  .sec-head .stroke {
+    width: 56px; height: 4px; border-radius: 4px; margin: 22px auto 0;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+  }
 
-/* ========== 通用排版 ========== */
-section{padding:110px 5vw;position:relative}
-.wrap{max-width:1240px;margin:0 auto}
-.sec-head{text-align:center;margin-bottom:72px}
-.sec-eyebrow{display:inline-flex;align-items:center;gap:14px;color:var(--red);font-size:14px;letter-spacing:.5em;text-indent:.5em;margin-bottom:18px}
-.sec-eyebrow::before,.sec-eyebrow::after{content:"";width:34px;height:1px;background:var(--red)}
-.sec-title{font-family:var(--art);font-size:clamp(34px,4.6vw,52px);font-weight:900;color:var(--ink);letter-spacing:.1em}
-.sec-title .dot{color:var(--red)}
-.sec-desc{margin-top:18px;color:var(--text-light);max-width:720px;margin-left:auto;margin-right:auto;font-size:16.5px}
-.dark .sec-title{color:#fff}
-.dark .sec-desc{color:rgba(255,255,255,.62)}
+  /* 滚动进入动画 */
+  .reveal { opacity: 0; transform: translateY(46px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .12s; } .reveal.d2 { transition-delay: .24s; }
+  .reveal.d3 { transition-delay: .36s; } .reveal.d4 { transition-delay: .48s; }
 
-/* 滚动显现 */
-.reveal{opacity:0;transform:translateY(46px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
+  /* ====== 介绍 ====== */
+  #intro { background: var(--cream); }
+  .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
+  @media (max-width: 920px) { .intro-grid { grid-template-columns: 1fr; } }
+  .intro-text h3 { font-size: 26px; letter-spacing: 3px; margin-bottom: 22px; font-weight: 700; }
+  .intro-text h3 em { color: var(--red); font-style: normal; }
+  .intro-text p { font-size: 16px; line-height: 2.1; color: #6b5d4f; letter-spacing: 1px; margin-bottom: 16px; text-align: justify; }
+  .intro-stats { display: flex; gap: 12px; margin-top: 34px; }
+  .intro-stats .stat {
+    flex: 1; background: var(--white); border-radius: var(--radius); padding: 22px 12px;
+    text-align: center; box-shadow: var(--shadow);
+  }
+  .intro-stats .num { font-size: 34px; font-weight: 800; color: var(--red); letter-spacing: 1px; }
+  .intro-stats .num small { font-size: 15px; font-weight: 600; margin-left: 2px; }
+  .intro-stats .cap { font-size: 13px; color: var(--ink-soft); margin-top: 6px; letter-spacing: 2px; }
+  .intro-img { position: relative; }
+  .intro-img .main {
+    width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .intro-img .float {
+    position: absolute; left: -46px; bottom: -40px; width: 230px; height: 160px; object-fit: cover;
+    border-radius: 18px; border: 6px solid var(--white); box-shadow: var(--shadow);
+  }
+  @media (max-width: 920px) { .intro-img .float { left: 10px; } }
+  .intro-img .badge {
+    position: absolute; top: 22px; right: 22px; background: rgba(200,54,46,.92); color: #fff;
+    padding: 10px 18px; border-radius: 999px; font-size: 13px; letter-spacing: 3px;
+    backdrop-filter: blur(6px);
+  }
 
-/* ========== 数据带 ========== */
-.stats{background:#fff;padding:74px 5vw;position:relative;overflow:hidden;border-bottom:1px solid rgba(60,40,20,.08)}
-.stats::before{content:"龍";position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:var(--art);font-size:340px;color:rgba(216,169,78,.12);pointer-events:none}
-.stats-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.stat{text-align:center;color:var(--ink);padding:10px 0;border-right:1px solid rgba(60,40,20,.1)}
-.stat:last-child{border-right:none}
-.stat .num{font-size:clamp(40px,4.6vw,62px);font-weight:900;font-family:var(--art);background:linear-gradient(180deg,var(--red),var(--red-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.stat .num small{font-size:.45em}
-.stat .lab{margin-top:8px;font-size:14.5px;letter-spacing:.24em;color:var(--text-light)}
+  /* ====== 赛程 ====== */
+  #schedule { background: linear-gradient(180deg, var(--cream-deep), var(--cream)); overflow: hidden; }
+  #schedule::before {
+    content: "賽"; position: absolute; right: -3vw; top: 30px; font-size: 30vw; line-height: 1;
+    color: rgba(200, 54, 46, .045); font-weight: 800; pointer-events: none;
+  }
+  .timeline { position: relative; max-width: 880px; margin: 0 auto; padding-left: 36px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px;
+    background: rgba(200, 54, 46, .12);
+  }
+  .timeline .progress {
+    position: absolute; left: 8px; top: 8px; width: 3px; border-radius: 3px; height: 0;
+    background: linear-gradient(var(--red), var(--gold));
+    transition: height .25s linear;
+  }
+  .t-item { position: relative; margin-bottom: 38px; }
+  .t-item .node {
+    position: absolute; left: -36px; top: 30px; width: 19px; height: 19px; border-radius: 50%;
+    background: var(--cream); border: 4px solid var(--red);
+    box-shadow: 0 0 0 6px rgba(200,54,46,.12);
+  }
+  .t-item.in .node { animation: pulse 2.4s ease-out infinite; }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(200,54,46,.30); }
+    70% { box-shadow: 0 0 0 14px rgba(200,54,46,0); }
+    100% { box-shadow: 0 0 0 0 rgba(200,54,46,0); }
+  }
+  .t-card {
+    background: var(--white); border-radius: var(--radius); padding: 30px 34px;
+    box-shadow: var(--shadow); border-left: 5px solid var(--red);
+    transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  }
+  .t-card:hover { transform: translateX(10px); box-shadow: 0 26px 60px rgba(120, 90, 60, .2); }
+  .t-card .row1 { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+  .t-card .no {
+    width: 40px; height: 40px; flex: none; border-radius: 12px;
+    background: linear-gradient(135deg, var(--red), var(--red-deep)); color: #fff;
+    display: grid; place-items: center; font-weight: 800; font-size: 18px;
+  }
+  .t-card h3 { font-size: 20px; letter-spacing: 1.5px; font-weight: 700; }
+  .t-card .tag {
+    font-size: 12px; color: var(--red); border: 1px solid rgba(200,54,46,.35);
+    padding: 3px 12px; border-radius: 999px; letter-spacing: 2px;
+  }
+  .t-card .slots { display: flex; flex-wrap: wrap; gap: 10px; }
+  .t-card .slot {
+    font-size: 14px; letter-spacing: 1px; color: #6b5d4f;
+    background: var(--cream); border-radius: 12px; padding: 9px 16px;
+    display: flex; align-items: center; gap: 8px;
+    transition: all .3s var(--ease);
+  }
+  .t-card .slot:hover { background: rgba(200,54,46,.08); color: var(--red); }
+  .t-card .slot::before { content: "⏱"; font-size: 13px; }
+  .sched-note { text-align: center; color: var(--ink-soft); font-size: 13.5px; letter-spacing: 2px; margin-top: 22px; }
 
-/* ========== 千年龙船 ========== */
-.history{background:var(--paper);background-image:radial-gradient(rgba(200,57,43,.045) 1px,transparent 1px);background-size:26px 26px}
-.hist-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
-.hist-imgs{position:relative}
-.hist-imgs .main{border-radius:6px;overflow:hidden;box-shadow:24px 24px 0 rgba(200,57,43,.12),0 26px 60px rgba(0,0,0,.22)}
-.hist-imgs .main img{width:100%;height:480px;object-fit:cover;transition:transform 1.2s ease}
-.hist-imgs:hover .main img{transform:scale(1.06)}
-.hist-imgs .float{position:absolute;right:-34px;bottom:-46px;width:46%;border:6px solid var(--paper);border-radius:6px;overflow:hidden;box-shadow:0 20px 46px rgba(0,0,0,.3);transform:rotate(3deg)}
-.hist-imgs .float img{width:100%;height:210px;object-fit:cover}
-.hist-imgs .stamp{position:absolute;left:-26px;top:-26px;width:92px;height:92px;background:var(--red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--art);font-size:17px;line-height:1.3;transform:rotate(-6deg);box-shadow:0 12px 30px rgba(155,34,24,.45);z-index:3}
-.hist-text h3{font-family:var(--art);font-size:30px;color:var(--ink);margin-bottom:20px;letter-spacing:.06em}
-.hist-text p{margin-bottom:16px;color:var(--text);font-size:16.5px;text-align:justify}
-.hist-text p b{color:var(--red)}
-.quoteline{border-left:4px solid var(--gold);background:rgba(216,169,78,.1);padding:16px 22px;font-family:var(--art);font-size:18px;color:#6b5320;margin:24px 0;letter-spacing:.06em}
-.timeline{margin-top:90px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.timeline::before{content:"";position:absolute;top:9px;left:4%;right:4%;height:2px;background:linear-gradient(90deg,var(--gold),var(--red),var(--gold))}
-.tl-item{text-align:center;padding:0 14px;position:relative}
-.tl-item::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--paper);border:4px solid var(--red);display:block;margin:0 auto 18px;position:relative;z-index:2;transition:.3s}
-.tl-item:hover::before{background:var(--gold);transform:scale(1.3)}
-.tl-item .yr{font-family:var(--art);font-size:24px;font-weight:900;color:var(--red)}
-.tl-item .tt{margin-top:6px;font-size:14.5px;color:var(--text-light);line-height:1.65}
+  /* 赛事动态新闻 */
+  .news-head {
+    display: flex; align-items: center; gap: 16px; max-width: 880px;
+    margin: 72px auto 26px;
+  }
+  .news-head .t { font-size: 21px; font-weight: 800; letter-spacing: 4px; color: var(--ink); white-space: nowrap; }
+  .news-head .t em { color: var(--red); font-style: normal; }
+  .news-head::before, .news-head::after {
+    content: ""; flex: 1; height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(200,54,46,.25));
+  }
+  .news-head::after { background: linear-gradient(90deg, rgba(200,54,46,.25), transparent); }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; }
+  @media (max-width: 880px) { .news-grid { grid-template-columns: 1fr; } }
+  .n-card {
+    background: var(--white); border-radius: 20px; padding: 26px 26px 22px;
+    box-shadow: var(--shadow); display: flex; flex-direction: column;
+    border-top: 4px solid var(--red);
+    transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  }
+  .n-card:hover { transform: translateY(-8px); box-shadow: 0 26px 56px rgba(120,90,60,.2); }
+  .n-card .src {
+    font-size: 12px; color: var(--red); letter-spacing: 2px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  }
+  .n-card .src::before { content: "📰"; }
+  .n-card h4 { font-size: 17px; line-height: 1.65; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 10px; }
+  .n-card p { font-size: 13.5px; line-height: 1.9; color: #6b5d4f; letter-spacing: 1px; flex: 1; }
+  .n-card .num-line { margin: 14px 0 4px; display: flex; gap: 18px; }
+  .n-card .num-line b { font-size: 24px; color: var(--red); font-weight: 800; }
+  .n-card .num-line span { font-size: 12px; color: var(--ink-soft); display: block; letter-spacing: 1.5px; margin-top: 2px; }
+  .n-card a {
+    margin-top: 14px; font-size: 13px; color: var(--red); text-decoration: none;
+    letter-spacing: 2px; font-weight: 600; align-self: flex-start;
+    border-bottom: 1.5px solid rgba(200,54,46,.3); padding-bottom: 2px;
+    transition: border-color .3s;
+  }
+  .n-card a:hover { border-color: var(--red); }
 
-/* ========== 龙头百态 ========== */
-.heads{background:linear-gradient(180deg,#fff 0%,var(--paper-2) 100%);overflow:hidden}
-.heads::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 60 Q30 30 60 60 T120 60' stroke='rgba(216,169,78,.05)' fill='none' stroke-width='2'/%3E%3C/svg%3E");pointer-events:none}
-.head-photo{max-width:780px;margin:0 auto 56px;position:relative;z-index:2;border-radius:10px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid rgba(216,169,78,.35)}
-.head-photo img{width:100%;transition:transform .8s}
-.head-photo:hover img{transform:scale(1.03)}
-.head-photo .ph-cap{position:absolute;left:0;right:0;bottom:0;padding:30px 20px 14px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:var(--gold-light);text-align:center;font-size:14px;letter-spacing:.2em}
-.head-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;position:relative;z-index:2}
-.head-card{background:#fff;border:1px solid rgba(216,169,78,.45);border-radius:8px;padding:42px 18px 34px;text-align:center;color:var(--ink);box-shadow:0 8px 26px rgba(60,40,20,.08);transition:.45s cubic-bezier(.2,1,.3,1);position:relative;overflow:hidden;cursor:default}
-.head-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));transform:scaleX(0);transition:.45s;transform-origin:left}
-.head-card:hover{transform:translateY(-12px);background:rgba(200,57,43,.05);border-color:var(--red);box-shadow:0 18px 42px rgba(60,40,20,.16)}
-.head-card:hover::before{transform:scaleX(1)}
-.head-card .zi{font-family:var(--art);font-size:64px;font-weight:900;background:linear-gradient(180deg,var(--red),var(--red-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2}
-.head-card h4{margin-top:14px;font-size:19px;letter-spacing:.18em}
-.head-card p{margin-top:10px;font-size:13.5px;color:var(--text-light);line-height:1.7}
+  /* ====== 龙船风采 ====== */
+  #boats { background: var(--cream); }
+  .gallery {
+    display: grid; gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 215px;
+  }
+  .g-item { position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; box-shadow: 0 10px 30px rgba(120,90,60,.1); }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+  .g-item:hover img { transform: scale(1.07); }
+  .g-item .cap {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 38px 20px 16px;
+    background: linear-gradient(transparent, rgba(50, 22, 14, .68));
+    color: #fff; font-size: 15px; letter-spacing: 3px;
+    transform: translateY(8px); opacity: 0; transition: all .5s var(--ease);
+  }
+  .g-item:hover .cap { transform: none; opacity: 1; }
+  .g-item.w2 { grid-column: span 2; }
+  .g-item.h2 { grid-row: span 2; }
+  @media (max-width: 920px) { .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; } }
 
-/* ========== 古老仪式 ========== */
-.rituals{background:var(--paper-2)}
-.rit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-.rit-card{background:#fff;border-radius:8px;padding:30px 20px;box-shadow:0 6px 22px rgba(60,40,20,.08);transition:.4s;position:relative;border-top:3px solid transparent}
-.rit-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(60,40,20,.16);border-top-color:var(--red)}
-.rit-card .no{font-family:var(--art);font-size:15px;color:var(--gold);letter-spacing:.1em}
-.rit-card h4{font-family:var(--art);font-size:21px;color:var(--ink);margin:8px 0 10px;letter-spacing:.08em}
-.rit-card p{font-size:13.8px;color:var(--text-light);line-height:1.75}
-.rit-note{margin-top:44px;text-align:center;color:var(--text-light);font-size:15px}
-.rit-note b{color:var(--red)}
+  /* 掌龙头 */
+  .longtou {
+    margin-top: 78px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    background: var(--white); border-radius: 28px; padding: 56px; box-shadow: var(--shadow);
+    position: relative; overflow: hidden;
+  }
+  .longtou::after {
+    content: "龍"; position: absolute; right: -20px; bottom: -52px; font-size: 220px; font-weight: 800;
+    color: rgba(200,54,46,.05); pointer-events: none;
+  }
+  @media (max-width: 920px) { .longtou { grid-template-columns: 1fr; padding: 32px; } }
+  .longtou img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
+  .longtou .t .lead { color: var(--red); font-size: 13px; letter-spacing: 5px; font-weight: 700; }
+  .longtou .t h3 { font-size: 30px; letter-spacing: 4px; margin: 12px 0 18px; font-weight: 800; }
+  .longtou .t p { font-size: 15.5px; line-height: 2.05; color: #6b5d4f; letter-spacing: 1px; margin-bottom: 14px; text-align: justify; }
+  .longtou .heads { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+  .longtou .heads span {
+    background: var(--cream); border-radius: 12px; padding: 9px 16px; font-size: 13.5px;
+    letter-spacing: 2px; color: var(--ink); transition: all .3s;
+  }
+  .longtou .heads span:hover { background: var(--red); color: #fff; transform: translateY(-3px); }
+  .longtou .quote {
+    border-left: 4px solid var(--gold); background: rgba(201,160,99,.08);
+    padding: 16px 20px; border-radius: 0 14px 14px 0;
+    font-size: 15px; color: var(--ink); letter-spacing: 1.5px; line-height: 1.9;
+  }
+  .longtou .quote strong { color: var(--red); }
 
-/* ========== 赛事画廊 ========== */
-.gallery{background:#fff}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
-.gal-item{position:relative;overflow:hidden;border-radius:6px;cursor:zoom-in;background:var(--paper-2);box-shadow:0 6px 20px rgba(60,40,20,.1)}
-.gal-item.w2{grid-column:span 2}
-.gal-item.h2{grid-row:span 2}
-.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.16,1,.3,1),filter .5s}
-.gal-item:hover img{transform:scale(1.1);filter:brightness(1.08)}
-.gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff;font-size:14px;letter-spacing:.12em;opacity:0;transform:translateY(12px);transition:.45s}
-.gal-item:hover .cap{opacity:1;transform:none}
-#lightbox{position:fixed;inset:0;background:rgba(10,11,14,.94);z-index:5000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.35s;backdrop-filter:blur(8px)}
-#lightbox.open{opacity:1;visibility:visible}
-#lightbox img{max-width:90vw;max-height:84vh;border-radius:6px;box-shadow:0 30px 90px rgba(0,0,0,.7)}
-#lightbox .lb-cap{position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);color:var(--gold-light);letter-spacing:.2em;font-size:15px}
-#lightbox .lb-x{position:absolute;top:24px;right:36px;color:#fff;font-size:38px;cursor:pointer;line-height:1;transition:.3s}
-#lightbox .lb-x:hover{color:var(--red);transform:rotate(90deg)}
+  /* ====== 人文 ====== */
+  #culture { background: linear-gradient(180deg, var(--cream-deep), var(--cream)); }
+  .culture-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+  @media (max-width: 860px) { .culture-grid { grid-template-columns: 1fr; } }
+  .c-card {
+    background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow);
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+  }
+  .c-card:hover { transform: translateY(-10px); box-shadow: 0 30px 64px rgba(120,90,60,.2); }
+  .c-card .ph { height: 280px; overflow: hidden; }
+  .c-card .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+  .c-card:hover .ph img { transform: scale(1.06); }
+  .c-card .tx { padding: 26px 30px 30px; }
+  .c-card .tx .mini { font-size: 12px; color: var(--red); letter-spacing: 4px; font-weight: 700; }
+  .c-card .tx h3 { font-size: 22px; letter-spacing: 3px; margin: 10px 0 12px; font-weight: 700; }
+  .c-card .tx p { font-size: 14.5px; line-height: 1.95; color: #6b5d4f; letter-spacing: 1px; text-align: justify; }
 
-/* ========== 濂溪故里 ========== */
-.culture{background:url("龙舟素材/龙舟潇水俯瞰.jpeg") center/cover fixed no-repeat;position:relative}
-.culture::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,243,234,.93),rgba(255,255,255,.88))}
-.culture .wrap{position:relative;z-index:2}
-.lotus-quote{text-align:center;color:var(--ink);max-width:860px;margin:0 auto 80px}
-.lotus-quote .q{font-family:var(--art);font-size:clamp(24px,3.6vw,40px);line-height:1.9;letter-spacing:.14em}
-.lotus-quote .q em{font-style:normal;color:var(--red)}
-.lotus-quote .by{margin-top:22px;color:var(--text-light);letter-spacing:.34em;font-size:15px}
-.cul-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.cul-card{background:#fff;border-radius:8px;overflow:hidden;transition:.45s;box-shadow:0 14px 40px rgba(60,40,20,.14)}
-.cul-card:hover{transform:translateY(-10px) }
-.cul-card .pic{height:190px;overflow:hidden;position:relative}
-.cul-card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.cul-card:hover .pic img{transform:scale(1.1)}
-.cul-card .pic .tag{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:12px;padding:4px 12px;letter-spacing:.16em;border-radius:3px}
-.cul-card .body{padding:22px 22px 26px}
-.cul-card h4{font-family:var(--art);font-size:21px;color:var(--ink);letter-spacing:.06em}
-.cul-card p{margin-top:10px;font-size:13.8px;color:var(--text-light);line-height:1.78}
+  /* ====== 美食 ====== */
+  #food { background: var(--cream); }
+  .shout {
+    position: relative; border-radius: 28px; overflow: hidden; margin-bottom: 60px;
+    display: grid; grid-template-columns: 1.1fr .9fr; min-height: 400px;
+    box-shadow: 0 26px 70px rgba(200,54,46,.22);
+    background: linear-gradient(120deg, var(--red), var(--red-deep));
+  }
+  @media (max-width: 860px) { .shout { grid-template-columns: 1fr; } }
+  .shout .tx { padding: 60px 54px; color: #fff; display: flex; flex-direction: column; justify-content: center; position: relative; }
+  .shout .tx::before {
+    content: "味"; position: absolute; left: 18px; top: -34px; font-size: 200px; font-weight: 800;
+    color: rgba(255,255,255,.05); pointer-events: none;
+  }
+  .shout .mini { font-size: 13px; letter-spacing: 5px; opacity: .85; font-weight: 600; }
+  .shout h3 {
+    font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; letter-spacing: 4px;
+    margin: 16px 0 8px; line-height: 1.5;
+  }
+  .shout h3 .mark {
+    background: linear-gradient(transparent 62%, rgba(255, 221, 150, .55) 62%);
+    padding: 0 4px;
+  }
+  .shout .hawk {
+    font-size: 17px; letter-spacing: 3px; opacity: .92; margin-top: 6px;
+  }
+  .shout p.note { margin-top: 22px; font-size: 14.5px; line-height: 2; opacity: .85; letter-spacing: 1.5px; max-width: 420px; }
+  .shout .ph { position: relative; min-height: 280px; }
+  .shout .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .shout .ph::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, var(--red-deep) 0%, transparent 26%);
+  }
+  @media (max-width: 860px) { .shout .ph::after { background: linear-gradient(180deg, var(--red-deep) 0%, transparent 26%); } }
 
-/* ========== 美食 ========== */
-.food{background:var(--paper)}
-.food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.food-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(60,40,20,.1);transition:.45s cubic-bezier(.2,1,.3,1)}
-.food-card:hover{transform:translateY(-10px) rotate(-.5deg);box-shadow:0 26px 56px rgba(60,40,20,.2)}
-.food-card .pic{height:230px;overflow:hidden;position:relative}
-.food-card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.food-card:hover .pic img{transform:scale(1.12)}
-.food-card .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(0,0,0,.35))}
-.food-more{background:linear-gradient(145deg,#fff,var(--paper-2));border:1px solid rgba(216,169,78,.5);display:flex;align-items:center;position:relative;overflow:hidden}
-.food-more::before{content:"味";position:absolute;right:-24px;bottom:-40px;font-family:var(--art);font-size:210px;color:rgba(216,169,78,.16);line-height:1;pointer-events:none}
-.food-more .body{padding-top:40px}
-.food-more h4{color:var(--red)}
-.food-more p{color:var(--text-light)}
-.food-card .body{padding:24px 26px 30px;position:relative}
-.food-card .seal2{position:absolute;top:-26px;right:22px;width:52px;height:52px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--art);font-size:20px;box-shadow:0 8px 20px rgba(155,34,24,.4);border:2px solid #fff}
-.food-card h4{font-family:var(--art);font-size:23px;color:var(--ink);letter-spacing:.06em}
-.food-card .sub{color:var(--gold);font-size:13px;letter-spacing:.22em;margin-top:4px}
-.food-card p{margin-top:12px;font-size:14.5px;color:var(--text-light);line-height:1.8}
+  .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 920px) { .food-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .food-grid { grid-template-columns: 1fr; } }
+  .f-card {
+    background: var(--white); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow);
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+  }
+  .f-card:hover { transform: translateY(-9px); box-shadow: 0 28px 60px rgba(120,90,60,.2); }
+  .f-card .ph { height: 215px; overflow: hidden; }
+  .f-card .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+  .f-card:hover .ph img { transform: scale(1.07); }
+  .f-card .tx { padding: 20px 24px 24px; }
+  .f-card .tx h4 { font-size: 18px; letter-spacing: 2.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .f-card .tx h4::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex: none; }
+  .f-card .tx p { font-size: 13.5px; line-height: 1.9; color: #6b5d4f; margin-top: 8px; letter-spacing: 1px; }
 
-/* ========== 赛程安排 ========== */
-.schedule{background:var(--paper-2);background-image:radial-gradient(rgba(200,57,43,.05) 1px,transparent 1px);background-size:26px 26px}
-.sch-list{display:flex;flex-direction:column;gap:26px;max-width:980px;margin:0 auto}
-.sch-card{background:#fff;border-radius:10px;box-shadow:0 10px 32px rgba(60,40,20,.1);display:grid;grid-template-columns:130px 1fr;overflow:hidden;transition:.4s}
-.sch-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(60,40,20,.18)}
-.sch-no{background:linear-gradient(160deg,var(--red),var(--red-deep));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:26px 10px}
-.sch-no .n{font-family:var(--art);font-size:46px;font-weight:900;line-height:1}
-.sch-no .t{font-size:12px;letter-spacing:.3em;text-indent:.3em;color:var(--gold-light)}
-.sch-body{padding:26px 30px 28px}
-.sch-body h4{font-family:var(--art);font-size:22px;color:var(--ink);letter-spacing:.04em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.sch-body h4 .lv{font-size:12px;font-family:var(--serif);background:rgba(216,169,78,.16);color:#8a6a23;border:1px solid rgba(216,169,78,.5);padding:3px 12px;border-radius:999px;letter-spacing:.18em;font-weight:400}
-.sch-times{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
-.sch-chip{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid rgba(200,57,43,.25);border-radius:8px;padding:8px 16px;font-size:14px;color:var(--text);transition:.3s}
-.sch-chip:hover{background:rgba(200,57,43,.08);border-color:var(--red)}
-.sch-chip .d{font-family:var(--art);color:var(--red);font-weight:700}
-.sch-img{max-width:680px;margin:56px auto 0;cursor:zoom-in;position:relative;border-radius:8px;overflow:hidden;box-shadow:0 16px 44px rgba(60,40,20,.18);border:8px solid #fff;transition:.4s}
-.sch-img:hover{transform:translateY(-5px);box-shadow:0 26px 60px rgba(60,40,20,.28)}
-.sch-img img{width:100%}
-.sch-img .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;text-align:center;padding:30px 12px 12px;font-size:13.5px;letter-spacing:.18em}
-.sch-note{margin-top:30px;text-align:center;color:var(--text-light);font-size:14px}
-.sch-note b{color:var(--red)}
-@media(max-width:640px){.sch-card{grid-template-columns:1fr}.sch-no{flex-direction:row;padding:14px}}
+  /* ====== 结尾横幅 ====== */
+  .cta {
+    position: relative; padding: 130px 6vw; text-align: center; color: #fff; overflow: hidden;
+  }
+  .cta .bg {
+    position: absolute; inset: 0; background: url("龙舟素材/龙舟盛况.webp") center/cover fixed no-repeat;
+  }
+  @supports (-webkit-touch-callout: none) { .cta .bg { background-attachment: scroll; } }
+  .cta .veil { position: absolute; inset: 0; background: rgba(110, 30, 22, .58); }
+  .cta .inner { position: relative; z-index: 2; }
+  .cta h2 { font-size: clamp(28px, 4.4vw, 48px); letter-spacing: 8px; font-weight: 800; margin-bottom: 18px; }
+  .cta p { font-size: 16.5px; letter-spacing: 4px; opacity: .92; }
 
-/* ========== 打印 / PDF ========== */
-@media print{
-  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important;transition:none!important}
-  #loader,#particles,#toTop,.scroll-hint,.hero-note,#menuBtn,#lightbox{display:none!important}
-  .reveal{opacity:1!important;transform:none!important}
-  nav{position:absolute;background:rgba(22,24,29,.92)}
-  header{height:auto;min-height:96vh}
-  .hero-bg{inset:0;animation:none}
-  .culture{background-attachment:scroll}
-  .sch-card,.food-card,.cul-card,.g-card,.rit-card,.head-card,.gal-item,.sch-img{break-inside:avoid}
-  section{padding:60px 5vw}
-  h1 .grad,.stat .num,.head-card .zi{background:none!important;-webkit-text-fill-color:var(--gold-light)!important;color:var(--gold-light)!important}
-}
-
-/* ========== 观赛指南 ========== */
-.guide{background:linear-gradient(135deg,var(--red-deep) 0%,#7a1810 55%,#5c120c 100%);color:#fff;overflow:hidden}
-.guide::before{content:"端午";position:absolute;left:-20px;bottom:-60px;font-family:var(--art);font-size:300px;color:rgba(255,255,255,.045);line-height:1;pointer-events:none}
-.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative;z-index:2}
-.g-card{background:rgba(255,255,255,.08);border:1px solid rgba(240,210,138,.3);border-radius:10px;padding:36px 30px;backdrop-filter:blur(6px);transition:.4s}
-.g-card:hover{background:rgba(255,255,255,.14);transform:translateY(-8px);border-color:var(--gold)}
-.g-card .ico{font-size:38px;line-height:1}
-.g-card h4{font-family:var(--art);font-size:22px;margin:16px 0 12px;letter-spacing:.12em;color:var(--gold-light)}
-.g-card p{font-size:14.5px;color:rgba(255,255,255,.85);line-height:1.85}
-.guide .sec-title{color:#fff}
-.guide .sec-eyebrow{color:var(--gold-light)}
-.guide .sec-eyebrow::before,.guide .sec-eyebrow::after{background:var(--gold-light)}
-.guide .sec-desc{color:rgba(255,255,255,.72)}
-
-/* ========== Footer ========== */
-footer{background:var(--paper-2);color:var(--text);padding:70px 5vw 36px;border-top:1px solid rgba(60,40,20,.1)}
-.foot-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:46px;border-bottom:1px solid rgba(60,40,20,.12)}
-.foot-grid h5{color:var(--red);font-family:var(--art);font-size:19px;letter-spacing:.16em;margin-bottom:18px}
-.foot-grid p,.foot-grid li{font-size:13.8px;line-height:2;color:var(--text-light)}
-.foot-grid ul{list-style:none}
-.foot-grid a{transition:.3s}
-.foot-grid a:hover{color:var(--red)}
-.copyright{max-width:1240px;margin:0 auto;padding-top:28px;text-align:center;font-size:12.5px;color:var(--text-light);letter-spacing:.1em;line-height:2}
-#toTop{position:fixed;right:28px;bottom:28px;width:50px;height:50px;background:var(--red);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:.4s;z-index:900;box-shadow:0 8px 24px rgba(200,57,43,.45)}
-#toTop.show{opacity:1;visibility:visible}
-#toTop:hover{transform:translateY(-6px);background:var(--red-deep)}
-
-.hero-note{position:absolute;right:24px;bottom:104px;z-index:8;color:rgba(255,255,255,.45);font-size:11.5px;letter-spacing:.12em}
-@media(max-width:640px){.hero-note{display:none}}
-
-/* 图片加载失败的占位 */
-img.broken{display:none}
-.img-fallback{width:100%;height:100%;min-height:180px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a2d36,#3a3026);color:var(--gold);font-family:var(--art);font-size:30px;letter-spacing:.3em}
-
-/* ========== 响应式 ========== */
-@media(max-width:1024px){
-  .head-grid,.rit-grid{grid-template-columns:repeat(3,1fr)}
-  .cul-grid{grid-template-columns:repeat(2,1fr)}
-  .gal-grid{grid-template-columns:repeat(2,1fr)}
-  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:44px}
-  .stat:nth-child(2){border-right:none}
-  .timeline{grid-template-columns:repeat(2,1fr);gap:34px}
-  .timeline::before{display:none}
-  .hist-grid{grid-template-columns:1fr;gap:80px}
-  .food-grid{grid-template-columns:repeat(2,1fr)}
-  .guide-grid,.foot-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .nav-links{position:fixed;top:0;right:-100%;width:74vw;height:100vh;background:rgba(255,255,255,.97);flex-direction:column;padding:110px 40px;gap:26px;transition:right .45s;backdrop-filter:blur(16px);box-shadow:-10px 0 40px rgba(60,40,20,.15)}
-  .nav-links.open{right:0}
-  .nav-links.open a{color:var(--text)}
-  #menuBtn{display:block;z-index:1001}
-  .hero-side{display:none}
-  .head-grid,.rit-grid,.cul-grid,.food-grid,.guide-grid,.foot-grid,.gal-grid{grid-template-columns:1fr}
-  .gal-item.w2{grid-column:span 1}
-  .hist-imgs .float{display:none}
-  section{padding:80px 6vw}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .stat{border-right:none}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-}
+  /* ====== 页脚 ====== */
+  footer {
+    background: var(--cream-deep); padding: 54px 6vw 40px; text-align: center;
+  }
+  footer .f-logo {
+    height: 70px; width: auto; margin: 0 auto 16px;
+    filter: drop-shadow(0 6px 14px rgba(200, 54, 46, .2));
+  }
+  footer .brand { font-size: 18px; font-weight: 700; color: var(--red); letter-spacing: 4px; margin-bottom: 14px; }
+  footer p { font-size: 13px; color: var(--ink-soft); line-height: 2; letter-spacing: 1.5px; }
+  footer .legal {
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(138,125,111,.18);
+    font-size: 12.5px;
+  }
 </style>
 </head>
 <body>
 
-<!-- 导航 -->
-<nav id="nav">
-  <a class="logo" href="#top">
-    <span class="mark">龍</span>
-    <span class="name">道州龙船<small>DAOZHOU DRAGON BOAT</small></span>
-  </a>
-  <button id="menuBtn" aria-label="菜单">☰</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#history">千年龙船</a></li>
-    <li><a href="#heads">龙头百态</a></li>
-    <li><a href="#rituals">古老仪式</a></li>
-    <li><a href="#gallery">赛事盛况</a></li>
-    <li><a href="#culture">人文道州</a></li>
-    <li><a href="#food">道州美食</a></li>
-    <li><a href="#schedule">赛程安排</a></li>
-    <li><a href="#guide">观赛指南</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header id="top">
-  <div class="hero-bg"></div>
-  <div class="hero-veil"></div>
-  <canvas id="particles"></canvas>
-  <div class="hero-side l">湖南省 · 永州市 · 道县 · 潇水河畔</div>
-  <div class="hero-side r">国家级非物质文化遗产 · 道州龙船习俗</div>
-  <div class="hero-inner">
-    <div class="hero-tag">中国龙舟之乡 · 湖南道县</div>
-    <h1 class="hero-title"><span class="grad">百龙出征</span><br>一桨千年</h1>
-    <p class="hero-sub">鼓声三下红旗开，两龙跃出浮水来 —— 每年<b>端午</b>，潇水河上<b>百舸争流</b>，再现千年盛景</p>
-    <div class="hero-cta">
-      <a class="btn btn-red" href="#gallery">观赛事盛况</a>
-      <a class="btn btn-ghost" href="#history">探千年习俗</a>
-    </div>
-  </div>
-  <div class="scroll-hint">向下滑动<div class="line"></div></div>
-  <div class="hero-note">影像 · 道县龙舟赛实拍</div>
-  <div class="hero-waves">
-    <svg viewBox="0 0 2400 90" preserveAspectRatio="none">
-      <path class="wave w3" d="M0,55 C200,25 400,85 600,55 C800,25 1000,85 1200,55 C1400,25 1600,85 1800,55 C2000,25 2200,85 2400,55 L2400,90 L0,90 Z" fill="#c8392b" opacity=".3"/>
-      <path class="wave w2" d="M0,62 C200,32 400,92 600,62 C800,32 1000,92 1200,62 C1400,32 1600,92 1800,62 C2000,32 2200,92 2400,62 L2400,90 L0,90 Z" fill="#d8a94e" opacity=".4"/>
-      <path class="wave" d="M0,70 C200,45 400,95 600,70 C800,45 1000,95 1200,70 C1400,45 1600,95 1800,70 C2000,45 2200,95 2400,70 L2400,90 L0,90 Z" fill="#f7f3ea"/>
-    </svg>
-  </div>
+<!-- 顶部导航 -->
+<header class="nav">
+  <div class="logo"><img src="龙舟素材/logo_透明.png" alt="道县龙舟赛 logo">2026 道州龙船 · 潇水竞渡</div>
+  <nav>
+    <ul>
+      <li><a href="#intro">千年道州</a></li>
+      <li><a href="#schedule">赛程安排</a></li>
+      <li><a href="#boats">龙船风采</a></li>
+      <li><a href="#culture">人文道县</a></li>
+      <li><a href="#food">舌尖道州</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- 跑马灯 -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>🐉 道州龙船习俗 — 第五批国家级非物质文化遗产</span>
-    <span>🏆 2002年湖南省人民政府授予道县「龙舟之乡」称号</span>
-    <span>🚣 每年端午 百余艘传统龙船齐聚潇水河</span>
-    <span>📜 始于宋代 祭屈原 念周子 千年传承</span>
-    <span>🌾 道县玉蟾岩 — 世界最早人工栽培稻遗存出土地「天下谷源」</span>
-    <span>🐉 道州龙船习俗 — 第五批国家级非物质文化遗产</span>
-    <span>🏆 2002年湖南省人民政府授予道县「龙舟之乡」称号</span>
-    <span>🚣 每年端午 百余艘传统龙船齐聚潇水河</span>
-    <span>📜 始于宋代 祭屈原 念周子 千年传承</span>
-    <span>🌾 道县玉蟾岩 — 世界最早人工栽培稻遗存出土地「天下谷源」</span>
-  </div>
-</div>
+<!-- 侧边快速导航 -->
+<aside class="side-nav" id="sideNav">
+  <a href="#top"><span class="label">回到顶部</span><span class="dot"></span></a>
+  <a href="#intro"><span class="label">千年道州</span><span class="dot"></span></a>
+  <a href="#schedule"><span class="label">赛程安排</span><span class="dot"></span></a>
+  <a href="#boats"><span class="label">龙船风采</span><span class="dot"></span></a>
+  <a href="#culture"><span class="label">人文道县</span><span class="dot"></span></a>
+  <a href="#food"><span class="label">舌尖道州</span><span class="dot"></span></a>
+</aside>
 
-<!-- 数据带 -->
-<div class="stats">
-  <div class="stats-grid">
-    <div class="stat reveal"><div class="num"><span class="counter" data-target="1000">0</span><small>+</small></div><div class="lab">年 · 龙船传承历史</div></div>
-    <div class="stat reveal d1"><div class="num"><span class="counter" data-target="100">0</span><small>+</small></div><div class="lab">艘 · 端午出征龙船</div></div>
-    <div class="stat reveal d2"><div class="num"><span class="counter" data-target="20">0</span><small>万+</small></div><div class="lab">人 · 沿岸观赛盛况</div></div>
-    <div class="stat reveal d3"><div class="num"><span class="counter" data-target="2021">0</span></div><div class="lab">年 · 列入国家级非遗</div></div>
-  </div>
-</div>
-
-<!-- 千年龙船 -->
-<section id="history" class="history">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">HERITAGE · 非遗传承</div>
-      <h2 class="sec-title">千年龙船<span class="dot"> · </span>始于宋代</h2>
-      <p class="sec-desc">一条潇水，淌过千年。道州人以一艘艘龙船，把对屈原的追念、对周子的敬仰、对风调雨顺的祈愿，一桨一桨划进了岁月深处。</p>
-    </div>
-    <div class="hist-grid">
-      <div class="hist-imgs reveal">
-        <div class="stamp">非遗<br>名录</div>
-        <div class="main"><img src="龙舟素材/龙舟出征.jpeg" alt="道县龙舟赛百龙出征实拍" loading="lazy"></div>
-        <div class="float"><img src="龙舟素材/龙舟队员.jpeg" alt="道县龙舟队员与龙首特写" loading="lazy"></div>
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="bg" id="heroBg"></div>
+  <div class="veil"></div>
+  <div class="inner">
+    <div class="glass">
+      <div class="kicker-row">
+        <div class="kicker">湖南 · 永州 · 道县</div>
+        <div class="kicker year">2026</div>
       </div>
-      <div class="hist-text reveal d1">
-        <h3>祭屈原 · 念周子 · 一河龙船一城人</h3>
-        <p>道州端午划龙舟<b>始于宋代</b>，最初为祭祀爱国诗人<b>屈原</b>；又因农历五月初五恰是理学鼻祖<b>周敦颐（周子）</b>的诞辰，道州龙船便兼具了纪念乡贤的独特意涵——这在全国龙舟习俗中绝无仅有。</p>
-        <p>道州龙船至今保留古制：每艘龙船皆有<b>固定船名</b>，船头雕刻分<b>龙、虎、凤、鹰、猫</b>五大头型，各村各姓世代相承，不可僭越。龙船习俗典型地保存了湘南地区<b>稻作文化、宗族文化</b>的历史信息，以及端午祭屈原、祀水神、敬舜帝的古老传统。</p>
-        <div class="quoteline">「鼓声三下红旗开，两龙跃出浮水来。」—— 唐 · 张建封《竞渡歌》</div>
-        <p>2021年5月，<b>端午节（道州龙船习俗）</b>经国务院批准，列入<b>第五批国家级非物质文化遗产代表性项目名录</b>。如今每逢端午，道县城区潇水河上百龙竞渡、两岸人山人海，被誉为「水上狂欢节」。</p>
+      <h1>道州龙船</h1>
+      <div class="sub">潇水竞渡千帆舞 · 端阳鼓震楚天南</div>
+      <div class="tags">
+        <span>国家级非物质文化遗产</span>
+        <span>千年龙船习俗</span>
+        <span>2026 端午盛会</span>
       </div>
     </div>
-    <div class="timeline">
-      <div class="tl-item reveal"><div class="yr">宋代</div><div class="tt">道州端午划龙舟之俗兴起<br>祭屈原 · 念周子</div></div>
-      <div class="tl-item reveal d1"><div class="yr">2002</div><div class="tt">湖南省人民政府授予道县<br>「龙舟之乡」称号</div></div>
-      <div class="tl-item reveal d2"><div class="yr">2006</div><div class="tt">道州龙船赛入选湖南省<br>第一批非物质文化遗产名录</div></div>
-      <div class="tl-item reveal d3"><div class="yr">2021</div><div class="tt">列入第五批国家级<br>非物质文化遗产代表性项目</div></div>
-      <div class="tl-item reveal d4"><div class="yr">2024</div><div class="tt">中国龙舟公开赛（道县站）<br>暨国家非遗道州龙船赛开幕</div></div>
-    </div>
   </div>
+  <div class="scroll-cue">向下探索<div class="line"></div></div>
 </section>
 
-<!-- 龙头百态 -->
-<section id="heads" class="heads">
+<!-- 介绍 -->
+<section class="block" id="intro">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-eyebrow">FIVE HEADS · 五型船首</div>
-      <h2 class="sec-title">龙头百态<span class="dot"> · </span>各佑一方</h2>
-      <p class="sec-desc">道州龙船的船头雕刻自成体系——龙、虎、凤、鹰、猫五型并立，须、角、眼、口各有讲究，红、黄、青、白、金各显威仪，是辨识各村各姓船队的图腾。</p>
+      <div class="en">About Daozhou</div>
+      <h2>千年道州 · 龙船故里</h2>
+      <p class="desc">一条潇水穿城而过，一面龙鼓敲了千年。</p>
+      <div class="stroke"></div>
     </div>
-    <div class="head-photo reveal">
-      <img src="龙舟素材/龙舟龙头.webp" alt="道州龙船各式船首实拍：龙、虎、凤、猫" loading="lazy">
-      <div class="ph-cap">道州龙船船首实拍 —— 龙、虎、凤、猫，各村图腾，一目了然</div>
-    </div>
-    <div class="head-grid">
-      <div class="head-card reveal"><div class="zi">龍</div><h4>龙头船</h4><p>最为常见，分金龙、红龙、黄龙、青龙、白龙等，昂首衔须，气吞潇湘。</p></div>
-      <div class="head-card reveal d1"><div class="zi">虎</div><h4>虎头船</h4><p>额书「王」字，怒目圆睁，取镇水驱邪之意，势如猛虎下山。</p></div>
-      <div class="head-card reveal d2"><div class="zi">鳳</div><h4>凤头船</h4><p>凤冠霞彩，雍容灵动，寓意祥瑞临门、风调雨顺。</p></div>
-      <div class="head-card reveal d3"><div class="zi">鷹</div><h4>鹰头船</h4><p>利喙如钩，目光如电，象征搏击中流、一往无前。</p></div>
-      <div class="head-card reveal d4"><div class="zi">貓</div><h4>猫头船</h4><p>道州独有的奇趣船首，机敏护粮，承载着稻作之乡的祈愿。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 古老仪式 -->
-<section id="rituals" class="rituals">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">RITUALS · 完整古仪</div>
-      <h2 class="sec-title">一船下水<span class="dot"> · </span>十礼相随</h2>
-      <p class="sec-desc">从取木到竞渡，道州龙船保有一套完整而神秘的古老仪式，环环相扣，庄重如诗。</p>
-    </div>
-    <div class="rit-grid">
-      <div class="rit-card reveal"><div class="no">壹</div><h4>「偷」龙骨树</h4><p>造船取木不言「买」而称「偷」，悄取良木为龙骨，取意神龙天授。</p></div>
-      <div class="rit-card reveal d1"><div class="no">贰</div><h4>架马 · 倒马</h4><p>开工架马安船台，完工倒马谢鲁班，造船始末皆有礼数。</p></div>
-      <div class="rit-card reveal d2"><div class="no">叁</div><h4>乐龙迎首</h4><p>新龙头入村，锣鼓喧天、鞭炮齐鸣，合村相迎如迎贵宾。</p></div>
-      <div class="rit-card reveal d3"><div class="no">肆</div><h4>开光点睛</h4><p>朱砂点睛，龙目始明——自此木龙有灵，可下潇水。</p></div>
-      <div class="rit-card reveal d4"><div class="no">伍</div><h4>安太岁</h4><p>船成之日安奉太岁，祈佑船队往来平安、人丁兴旺。</p></div>
-      <div class="rit-card reveal"><div class="no">陆</div><h4>点俊（划旱龙船）</h4><p>下水之前先「划」旱船，操演阵形，鼓点与号子先声夺人。</p></div>
-      <div class="rit-card reveal d1"><div class="no">柒</div><h4>打犁头火</h4><p>烧红犁头淬水起雾，烟气绕船一周，驱秽纳吉。</p></div>
-      <div class="rit-card reveal d2"><div class="no">捌</div><h4>送瘟祈福</h4><p>端午送瘟神、祛百病，寄托河清海晏、阖家安康的祈愿。</p></div>
-      <div class="rit-card reveal d3"><div class="no">玖</div><h4>划阴龙船</h4><p>夜划龙船祭屈原、祈平安，桨声灯影里与先贤隔水相望。</p></div>
-      <div class="rit-card reveal d4"><div class="no">拾</div><h4>百龙竞渡</h4><p>五月初五，百船齐发，鼓震两岸——千年习俗在此刻抵达高潮。</p></div>
-    </div>
-    <p class="rit-note reveal">这一整套习俗，是<b>活着的端午</b>——它不在博物馆的玻璃柜里，而在道州人的桨声与鼓点之中。</p>
-  </div>
-</section>
-
-<!-- 赛事画廊 -->
-<section id="gallery" class="gallery">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">GALLERY · 现场影像</div>
-      <h2 class="sec-title">潇水竞渡<span class="dot"> · </span>盛况实拍</h2>
-      <p class="sec-desc">鼓点如雷，桨影如织——道县龙舟赛现场实拍。点击图片可放大欣赏。</p>
-    </div>
-    <div class="gal-grid">
-      <div class="gal-item w2 h2 reveal"><img src="龙舟素材/龙舟盛况.webp" alt="道县龙舟赛百舸争流，西洲宝塔下竞渡" loading="lazy"><div class="cap">宝塔为证 · 百舸争流</div></div>
-      <div class="gal-item reveal d1"><img src="龙舟素材/龙舟队伍.webp" alt="道县龙舟队员奋力挥桨" loading="lazy"><div class="cap">劈波斩浪 · 桨起水飞</div></div>
-      <div class="gal-item reveal d2"><img src="龙舟素材/龙舟2.jpg" alt="道县龙舟赛两岸人山人海航拍" loading="lazy"><div class="cap">万人空巷 · 两岸观潮</div></div>
-      <div class="gal-item reveal d1"><img src="龙舟素材/龙舟队员2.jpeg" alt="道县龙舟队伍与金色龙首" loading="lazy"><div class="cap">蓄势待发 · 龙首昂扬</div></div>
-      <div class="gal-item reveal d2"><img src="龙舟素材/龙舟远景.jpeg" alt="潇水河上的道州龙船远景" loading="lazy"><div class="cap">一舟一旗 · 静水流深</div></div>
-      <div class="gal-item w2 reveal d2"><img src="龙舟素材/龙舟潇水俯瞰.jpeg" alt="航拍道县城区潇水河龙舟竞渡" loading="lazy"><div class="cap">天眼俯瞰 · 潇水穿城</div></div>
-      <div class="gal-item w2 reveal d3"><img src="龙舟素材/龙舟集结.webp" alt="道县龙舟在西洲公园水域集结" loading="lazy"><div class="cap">百龙集结 · 蓄势出征</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 濂溪故里 · 人文道州 -->
-<section id="culture" class="culture">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">CULTURE · 人文道州</div>
-      <h2 class="sec-title">濂溪故里<span class="dot"> · </span>理学之源</h2>
-    </div>
-    <div class="lotus-quote reveal">
-      <p class="q">「予独爱莲之<em>出淤泥而不染</em>，<em>濯清涟而不妖</em>，<br>中通外直，不蔓不枝，香远益清，亭亭净植。」</p>
-      <p class="by">—— 北宋 · 周敦颐《爱莲说》· 写于道州故里的千古名篇</p>
-    </div>
-    <div class="cul-grid">
-      <div class="cul-card reveal">
-        <div class="pic"><span class="tag">圣贤故里</span><img src="龙舟素材/濂溪故里.webp" alt="道县濂溪故里实景" loading="lazy"></div>
-        <div class="body"><h4>周敦颐与濂溪故里</h4><p>道县是北宋思想家、理学鼻祖周敦颐的诞生地，素有「理学之源、圣贤故里」之称。濂溪故里建村1200余年，存有周敦颐故居、濂溪书院等胜迹；鲁迅、周恩来皆为周子后裔。</p></div>
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <h3>每逢端午，<em>满城空巷，万人下河</em></h3>
+        <p>道县，古称道州，地处湖南省永州市潇水之滨，是理学鼻祖周敦颐的故里。这里的龙船习俗相传起于纪念屈原，世代相承、千年不辍，2021 年「端午节（道州龙船习俗）」列入国家级非物质文化遗产代表性项目名录。</p>
+        <p>道州龙船与众不同：船头不止有龙，更有虎头、凤头、麒麟头，五彩纷呈、各护一方。每年农历五月，潇水河上百舸争流、两岸人山人海，号子声、锣鼓声、呐喊声响彻江面，被誉为「中国传统龙船文化的活化石」。</p>
+        <div class="intro-stats">
+          <div class="stat reveal d1"><div class="num" data-count="1000" data-suffix="+">0</div><div class="cap">年传承历史</div></div>
+          <div class="stat reveal d2"><div class="num" data-count="100" data-suffix="+">0</div><div class="cap">艘龙船竞渡</div></div>
+          <div class="stat reveal d3"><div class="num" data-count="10" data-suffix="万+">0</div><div class="cap">观众齐聚潇水</div></div>
+        </div>
       </div>
-      <div class="cul-card reveal d1">
-        <div class="pic"><span class="tag">天下谷源</span><img src="龙舟素材/玉蟾岩.webp" alt="道县玉蟾岩遗址实景" loading="lazy"></div>
-        <div class="body"><h4>玉蟾岩遗址</h4><p>道县玉蟾岩出土了距今约1.2万年的人工栽培稻遗存与早期陶器，被誉为「天下谷源」。潇水之畔的稻作文明，正是龙船习俗生长的土壤。</p></div>
-      </div>
-      <div class="cul-card reveal d2">
-        <div class="pic"><span class="tag">山水奇观</span><img src="龙舟素材/月岩.webp" alt="道县月岩实景" loading="lazy"></div>
-        <div class="body"><h4>月岩</h4><p>月岩洞开三门，移步换景，洞中仰望如月之盈亏，奇绝天成，相传为周子少年悟道之地，历代文人摩崖题刻遍布其间。</p></div>
-      </div>
-      <div class="cul-card reveal d3">
-        <div class="pic"><span class="tag">红色记忆</span><img src="龙舟素材/陈树湘.webp" alt="陈树湘烈士纪念地实景" loading="lazy"></div>
-        <div class="body"><h4>陈树湘「断肠明志」</h4><p>红34师师长陈树湘湘江战役负伤被俘，在道县潇水边断肠明志、壮烈牺牲，「为苏维埃流尽最后一滴血」的誓言至今回响在这片土地。</p></div>
+      <div class="intro-img reveal d2">
+        <img class="main" src="龙舟素材/龙舟主图.webp" alt="道州龙船竞渡">
+        <img class="float" src="龙舟素材/龙舟远景.jpeg" alt="潇水河上龙船远景">
+        <div class="badge">国家级非遗</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 道州美食 -->
-<section id="food" class="food">
+<!-- 赛程 -->
+<section class="block" id="schedule">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-eyebrow">TASTE · 舌尖道州</div>
-      <h2 class="sec-title">道州味道<span class="dot"> · </span>不止于赛</h2>
-      <p class="sec-desc">看完龙船，别急着走——道州人的灶台上，还藏着另一场千年传承。</p>
+      <div class="en">Schedule 2026</div>
+      <h2>赛程安排</h2>
+      <p class="desc">2026 年龙船赛场次时间表 · 三大赛事连开七天，潇水河畔不散场</p>
+      <div class="stroke"></div>
     </div>
+    <div class="timeline" id="timeline">
+      <div class="progress" id="tlProgress"></div>
+      <div class="t-item reveal">
+        <span class="node"></span>
+        <div class="t-card">
+          <div class="row1">
+            <span class="no">1</span>
+            <h3>2026 年中国龙舟公开赛</h3>
+            <span class="tag">国家级赛事</span>
+          </div>
+          <div class="slots">
+            <span class="slot">6月11日 上午 8:00 – 12:00</span>
+            <span class="slot">6月11日 下午 13:30 – 18:00</span>
+            <span class="slot">6月12日 上午 8:00 – 12:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="t-item reveal d1">
+        <span class="node"></span>
+        <div class="t-card">
+          <div class="row1">
+            <span class="no">2</span>
+            <h3>我要上龙超 · 2026 湖南省龙舟超级联赛选拔赛（道县站）</h3>
+            <span class="tag">省级联赛</span>
+          </div>
+          <div class="slots">
+            <span class="slot">6月13日 上午 9:30 – 12:00</span>
+            <span class="slot">6月13日 下午 13:30 – 17:00</span>
+            <span class="slot">6月14日 上午 8:00 – 12:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="t-item reveal d2">
+        <span class="node"></span>
+        <div class="t-card">
+          <div class="row1">
+            <span class="no">3</span>
+            <h3>国家非遗道州龙船赛 · 传统龙船赛</h3>
+            <span class="tag">压轴非遗大戏</span>
+          </div>
+          <div class="slots">
+            <span class="slot">6月15日 下午 13:30 – 18:00</span>
+            <span class="slot">6月16日 下午 13:30 – 18:00</span>
+            <span class="slot">6月17日 下午 13:30 – 18:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="sched-note reveal">※ 赛事地点：道县潇水河城区段 · 具体场次以现场公告为准</p>
+
+    <div class="news-head reveal"><span class="t">赛事动态 · <em>媒体聚焦</em></span></div>
+    <div class="news-grid">
+      <div class="n-card reveal">
+        <div class="src">经济日报新闻客户端</div>
+        <h4>2026 中国龙舟公开赛在道县潇水河开赛</h4>
+        <p>6 月 11 日，2026 年中国龙舟公开赛（湖南永州·道县站）在潇水河上鸣锣开桨，来自全国各地的龙舟劲旅同场竞速、劈波争流。</p>
+        <div class="num-line">
+          <div><b>30+</b><span>支参赛队伍</span></div>
+          <div><b>800+</b><span>名运动员</span></div>
+        </div>
+        <a href="http://www.jingjiribao.cn/static/detail.jsp?id=662473" target="_blank" rel="noopener">阅读原文 →</a>
+      </div>
+      <div class="n-card reveal d1">
+        <div class="src">道县新闻网 · 红网</div>
+        <h4>三赛联动，百龙争渡！2026 道州龙船系列赛规模创历史之最</h4>
+        <p>湖南省龙舟超级联赛选拔赛、中国龙舟公开赛、道州龙船赛三赛联动，5 月 30 日至 6 月 20 日连演三周，并配套百龙巡游、龙船宴、端午焰火秀、龙舟夜市等十大文旅活动。</p>
+        <div class="num-line">
+          <div><b>3</b><span>大赛事联动</span></div>
+          <div><b>10</b><span>大配套活动</span></div>
+        </div>
+        <a href="https://yz.rednet.cn/content/646049/55/15906879.html" target="_blank" rel="noopener">阅读原文 →</a>
+      </div>
+      <div class="n-card reveal d2">
+        <div class="src">吉尼斯世界纪录</div>
+        <h4>230 艘龙船同竞渡，道州龙船赛创下世界纪录</h4>
+        <p>2024 年道州龙船赛以 230 艘参赛龙船，创下「规模最大的龙舟赛（团体）」吉尼斯世界纪录——千年龙船之乡的底气，写在潇水河面上。</p>
+        <div class="num-line">
+          <div><b>230</b><span>艘龙船同场竞渡</span></div>
+        </div>
+        <a href="https://news.qq.com/rain/a/20250602A06BTW00" target="_blank" rel="noopener">阅读原文 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 龙船风采 -->
+<section class="block" id="boats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">The Race</div>
+      <h2>龙船风采</h2>
+      <p class="desc">百舸争流、鼓声雷动——潇水河上的速度与信仰</p>
+      <div class="stroke"></div>
+    </div>
+    <div class="gallery">
+      <div class="g-item w2 h2 reveal"><img src="龙舟素材/龙舟出征.jpeg" alt="龙船出征" loading="lazy"><div class="cap">出征 · 旌旗猎猎下潇水</div></div>
+      <div class="g-item reveal d1"><img src="龙舟素材/龙舟队员.jpeg" alt="龙船队员" loading="lazy"><div class="cap">桨手 · 同舟共济</div></div>
+      <div class="g-item reveal d2"><img src="龙舟素材/龙舟2.jpg" alt="龙船竞渡" loading="lazy"><div class="cap">竞渡 · 劈波斩浪</div></div>
+      <div class="g-item reveal d2"><img src="龙舟素材/龙舟队员2.jpeg" alt="龙船队员奋楫" loading="lazy"><div class="cap">奋楫 · 一鼓作气</div></div>
+      <div class="g-item reveal d3"><img src="龙舟素材/龙舟队伍.webp" alt="龙船队伍" loading="lazy"><div class="cap">列阵 · 整装待发</div></div>
+      <div class="g-item w2 reveal d1"><img src="龙舟素材/龙舟集结.webp" alt="龙船集结" loading="lazy"><div class="cap">集结 · 千帆竞发潇水畔</div></div>
+      <div class="g-item w2 reveal d2"><img src="龙舟素材/龙舟盛况.webp" alt="龙船赛盛况" loading="lazy"><div class="cap">盛况 · 两岸人潮如织</div></div>
+    </div>
+
+    <!-- 掌龙头 -->
+    <div class="longtou reveal">
+      <img src="龙舟素材/龙舟龙头.webp" alt="道州龙船龙头：龙、虎、凤、麒麟" loading="lazy">
+      <div class="t">
+        <div class="lead">独步天下的船头图腾</div>
+        <h3>一村一龙头 · 掌头见威望</h3>
+        <p>道州龙船的船头不拘一格，分<strong>龙、虎、凤、麒麟</strong>四大类：龙头有金、黄、黑、青、白、红六色，虎头有金、黄、红、白、黑五种，凤头分金、银两类。每一种船头都是一村一姓的信仰图腾，所谓「庙生龙、龙生庙」，黑龙庙出黑龙头，黄龙庙出黄龙头，外村的龙头绝不混用。</p>
+        <div class="heads">
+          <span>🐲 龙头 · 六色</span>
+          <span>🐯 虎头 · 五彩</span>
+          <span>🦚 凤头 · 金银</span>
+          <span>🦄 麒麟头</span>
+        </div>
+        <p class="quote"><strong>掌龙头者，代表着一村的威望与荣誉。</strong>按道州习俗，掌头人必须由村中德高望重之人或有名望的贤达担任，赛时端坐船头执掌龙头，并为全船桨手供饭出资——掌得起龙头，方扛得起一村人心。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 人文 -->
+<section class="block" id="culture">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Heritage & Landscape</div>
+      <h2>人文道县</h2>
+      <p class="desc">理学之源、稻作之源、红色热土——这座小城写满了大历史</p>
+      <div class="stroke"></div>
+    </div>
+    <div class="culture-grid">
+      <div class="c-card reveal">
+        <div class="ph"><img src="龙舟素材/濂溪故里.webp" alt="濂溪故里周敦颐故居" loading="lazy"></div>
+        <div class="tx">
+          <div class="mini">理学之源</div>
+          <h3>濂溪故里</h3>
+          <p>道县是北宋理学鼻祖周敦颐的诞生地。一篇《爱莲说》传诵千年，「出淤泥而不染，濯清涟而不妖」的君子风骨，正是从这片山水间生发。</p>
+        </div>
+      </div>
+      <div class="c-card reveal d1">
+        <div class="ph"><img src="龙舟素材/玉蟾岩.webp" alt="玉蟾岩遗址" loading="lazy"></div>
+        <div class="tx">
+          <div class="mini">稻作之源</div>
+          <h3>玉蟾岩遗址</h3>
+          <p>这里出土了距今约一万两千年的人工栽培稻标本与早期陶器，被誉为「天下谷源」，把人类稻作文明的源头写在了道县的山岩之间。</p>
+        </div>
+      </div>
+      <div class="c-card reveal d2">
+        <div class="ph"><img src="龙舟素材/月岩.webp" alt="月岩奇观" loading="lazy"></div>
+        <div class="tx">
+          <div class="mini">天下奇观</div>
+          <h3>月岩</h3>
+          <p>一洞三月，移步换形——东望如上弦，西望如下弦，中望满月当空。相传周敦颐少年时曾在此悟道，「无极而太极」的哲思自此萌芽。</p>
+        </div>
+      </div>
+      <div class="c-card reveal d3">
+        <div class="ph"><img src="龙舟素材/陈树湘.webp" alt="陈树湘烈士纪念园" loading="lazy"></div>
+        <div class="tx">
+          <div class="mini">红色热土</div>
+          <h3>陈树湘烈士纪念园</h3>
+          <p>「断肠明志」的红34师师长陈树湘，长眠于道县这片热土。「为苏维埃新中国流尽最后一滴血」的誓言，与潇水奔流，浩气长存。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 美食 -->
+<section class="block" id="food">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Local Flavor</div>
+      <h2>舌尖道州</h2>
+      <p class="desc">看完龙船赛，怎能不来一口地道的道州味</p>
+      <div class="stroke"></div>
+    </div>
+
+    <!-- 本地吆喝 突出展示 -->
+    <div class="shout reveal">
+      <div class="tx">
+        <div class="mini">赛场边最响亮的吆喝</div>
+        <h3>「<span class="mark">麻辣螺蛳卤鸡蛋</span>，<br>味道好的很！」</h3>
+        <div class="hawk">—— 潇水河边，吆喝的乡音比锣鼓还亮</div>
+        <p class="note">嗦一口麻辣鲜香的螺蛳，咬一个卤得透亮入味的鸡蛋，再看一场酣畅淋漓的龙船赛——这才是道县人端午的标配。</p>
+      </div>
+      <div class="ph"><img src="龙舟素材/麻辣螺蛳卤鸡蛋.jpg" alt="麻辣螺蛳卤鸡蛋" loading="lazy"></div>
+    </div>
+
     <div class="food-grid">
-      <div class="food-card reveal">
-        <div class="pic"><img src="龙舟素材/扎肉.jpeg" alt="道州扎肉实拍" loading="lazy"></div>
-        <div class="body"><div class="seal2">鲜</div><h4>道州扎肉</h4><div class="sub">千年古法 · 传统风味菜</div><p>承袭道县民间近千年传统工艺，选料考究、口味纯正，色鲜、味香、质脆，是道州宴席上压轴的硬菜。</p></div>
+      <div class="f-card reveal">
+        <div class="ph"><img src="龙舟素材/扎肉.jpeg" alt="道州扎肉" loading="lazy"></div>
+        <div class="tx"><h4>道州扎肉</h4><p>荷叶裹肉、细绳捆扎，慢火卤透，肥而不腻、香糯绵软，是道县宴席上压桌的硬菜。</p></div>
       </div>
-      <div class="food-card reveal d1">
-        <div class="pic"><img src="龙舟素材/灰鹅.webp" alt="道州灰鹅实拍" loading="lazy"></div>
-        <div class="body"><div class="seal2">香</div><h4>道州灰鹅</h4><div class="sub">四百年养殖史 · 道县特产</div><p>铁嘴、铜脚、白肚皮、瓦灰背，养殖已逾400年。鹅肉透味酥烂、软糯鲜香、油而不腻，一锅灰鹅，半城烟火。</p></div>
+      <div class="f-card reveal d1">
+        <div class="ph"><img src="龙舟素材/灰鹅.webp" alt="道州灰鹅" loading="lazy"></div>
+        <div class="tx"><h4>道州灰鹅</h4><p>国家地理标志产品。潇水滋养的灰鹅肉质紧实鲜美，一锅清炖原汁原味，鲜掉眉毛。</p></div>
       </div>
-      <div class="food-card reveal d2">
-        <div class="pic"><img src="龙舟素材/枕头粑.webp" alt="道州枕头粑粑实拍" loading="lazy"></div>
-        <div class="body"><div class="seal2">糯</div><h4>枕头粑粑</h4><div class="sub">端午限定 · 龙船伴手礼</div><p>枕头粑形似小枕，糯香绵软、入口弹韧，是端午看龙船的标配干粮，也是走亲访友的体面手信。</p></div>
+      <div class="f-card reveal d2">
+        <div class="ph"><img src="龙舟素材/麻仁泡.jpg" alt="麻圆泡" loading="lazy"></div>
+        <div class="tx"><h4>麻圆泡</h4><p>红薯揉进糯米团，小火慢炸至空心，裹上红糖白芝麻——皮脆心软、香甜不腻，街头巷尾的童年味道。</p></div>
       </div>
-      <div class="food-card reveal">
-        <div class="pic"><img src="龙舟素材/麻仁泡.jpg" alt="道州麻仁泡实拍" loading="lazy"></div>
-        <div class="body"><div class="seal2">酥</div><h4>麻仁泡</h4><div class="sub">老字号茶点 · 香脆化渣</div><p>芝麻裹身、中空酥脆，咬一口满嘴生香。配一盏热茶，坐在河堤上看一河龙舟，是道州人的端午闲趣。</p></div>
+      <div class="f-card reveal">
+        <div class="ph"><img src="龙舟素材/枕头粑.webp" alt="枕头粑" loading="lazy"></div>
+        <div class="tx"><h4>枕头粑</h4><p>形如小枕、洁白软糯，箬叶清香渗进米粑里，蒸食煎食两相宜，是道县人走亲访友的伴手礼。</p></div>
       </div>
-      <div class="food-card reveal d1">
-        <div class="pic"><img src="龙舟素材/红瓜子.png" alt="道州红瓜子实拍" loading="lazy"></div>
-        <div class="body"><div class="seal2">红</div><h4>道州红瓜子</h4><div class="sub">粒大壳红 · 地道特产</div><p>道州红瓜子粒大、壳红、仁满，自古即是年节待客的体面之礼，也曾是道州外销的名产。</p></div>
+      <div class="f-card reveal d1">
+        <div class="ph"><img src="龙舟素材/红瓜子.png" alt="道州红瓜子" loading="lazy"></div>
+        <div class="tx"><h4>道州红瓜子</h4><p>粒大壳红、仁满味香，曾为朝廷贡品。看龙船时抓一把在手，嗑着瓜子喊加油，惬意得很。</p></div>
       </div>
-      <div class="food-card food-more reveal d2">
-        <div class="body"><div class="seal2">味</div><h4>更多道州味道</h4><div class="sub">潇水夜市 · 烟火人间</div><p>道州早粉骨汤滚烫、码子十足；油炸粑、凉拌粉、酿豆腐撑起滨河夜市的灯火；道县更是湖南脐橙主产区，果甜汁丰。来道县，每一顿都不会重样。</p></div>
+      <div class="f-card reveal d2">
+        <div class="ph"><img src="龙舟素材/龙舟潇水俯瞰.jpeg" alt="潇水河畔" loading="lazy"></div>
+        <div class="tx"><h4>潇水河畔 · 烟火道州</h4><p>赛龙船的日子里，沿河尽是小吃摊档与欢声笑语，一城烟火气，最抚凡人心。</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 赛程安排 -->
-<section id="schedule" class="schedule">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">SCHEDULE · 场次时间</div>
-      <h2 class="sec-title">2026 赛程<span class="dot"> · </span>三赛连开</h2>
-      <p class="sec-desc">2026 年 6 月 11 日至 17 日，中国龙舟公开赛、湖南省龙舟超级联赛选拔赛、国家非遗道州龙船赛三大赛事在潇水河接连开桨，七天不停！</p>
-    </div>
-    <div class="sch-list">
-      <div class="sch-card reveal">
-        <div class="sch-no"><div class="n">壹</div><div class="t">第一赛</div></div>
-        <div class="sch-body">
-          <h4>2026年中国龙舟公开赛<span class="lv">国家级赛事</span></h4>
-          <div class="sch-times">
-            <span class="sch-chip"><span class="d">6月11日</span>上午 8:00–12:00</span>
-            <span class="sch-chip"><span class="d">6月11日</span>下午 13:30–18:00</span>
-            <span class="sch-chip"><span class="d">6月12日</span>上午 8:00–12:00</span>
-          </div>
-        </div>
-      </div>
-      <div class="sch-card reveal d1">
-        <div class="sch-no"><div class="n">贰</div><div class="t">第二赛</div></div>
-        <div class="sch-body">
-          <h4>「我要上龙超」2026湖南省龙舟超级联赛选拔赛（道县站）<span class="lv">省级选拔</span></h4>
-          <div class="sch-times">
-            <span class="sch-chip"><span class="d">6月13日</span>上午 9:30–12:00</span>
-            <span class="sch-chip"><span class="d">6月13日</span>下午 13:30–17:00</span>
-            <span class="sch-chip"><span class="d">6月14日</span>上午 8:00–12:00</span>
-          </div>
-        </div>
-      </div>
-      <div class="sch-card reveal d2">
-        <div class="sch-no"><div class="n">叁</div><div class="t">压轴赛</div></div>
-        <div class="sch-body">
-          <h4>国家非遗道州龙船赛 · 传统龙船赛<span class="lv">国家级非遗</span></h4>
-          <div class="sch-times">
-            <span class="sch-chip"><span class="d">6月15日</span>下午 13:30–18:00</span>
-            <span class="sch-chip"><span class="d">6月16日</span>下午 13:30–18:00</span>
-            <span class="sch-chip"><span class="d">6月17日</span>下午 13:30–18:00</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sch-img reveal">
-      <img src="龙舟素材/赛程表.jpg" alt="2026年龙船赛场次时间表官方原图" loading="lazy">
-      <div class="cap">官方场次时间表原图 · 点击放大查看</div>
-    </div>
-    <p class="sch-note reveal">压轴的<b>传统龙船赛</b>即百龙竞渡的非遗正赛，最是壮观；具体场次如有调整，以主办方现场公告为准。</p>
+<!-- 结尾横幅 -->
+<section class="cta">
+  <div class="bg"></div>
+  <div class="veil"></div>
+  <div class="inner reveal">
+    <h2>端午 · 来道县看龙船</h2>
+    <p>潇水为证，千年之约 —— 我们在道州等你</p>
   </div>
 </section>
 
-<!-- 观赛指南 -->
-<section id="guide" class="guide">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">GUIDE · 观赛攻略</div>
-      <h2 class="sec-title">端午之约<span class="dot"> · </span>道州见</h2>
-      <p class="sec-desc">一年只此一回，错过再等一年。收好这份攻略，端午潇水河畔见。</p>
-    </div>
-    <div class="guide-grid">
-      <div class="g-card reveal"><div class="ico">🗓️</div><h4>赛事时间</h4><p>每年端午期间举行，<b>2026年为6月11日—17日</b>（详见上方赛程表），压轴的传统龙船赛最为壮观，决赛日两岸观者逾20万人。</p></div>
-      <div class="g-card reveal d1"><div class="ico">📍</div><h4>观赛地点</h4><p>湖南省永州市<b>道县县城潇水河段</b>（西洲公园—滨河路一带为最佳观赛区）。沿河两岸均可观赛，桥上视野极佳，建议提早占位。</p></div>
-      <div class="g-card reveal d2"><div class="ico">🚄</div><h4>交通指引</h4><p>高铁至<b>永州站</b>或<b>道县站</b>（湘桂线方向），转乘市内交通即达；自驾走<b>二广高速（G55）道县出口</b>。赛事期间城区交通管制，建议绿色出行。</p></div>
-      <div class="g-card reveal"><div class="ico">🎒</div><h4>观赛贴士</h4><p>端午湘南多雨且烈日交替，雨具与防晒缺一不可；决赛日人流密集，请看管好随身物品，听从现场安保引导，勿下河嬉水。</p></div>
-      <div class="g-card reveal d1"><div class="ico">📸</div><h4>拍摄机位</h4><p>清晨侧逆光下的龙头特写、正午起航的百舸齐发、傍晚的阴龙船灯影，是三大经典画面。无人机拍摄须遵守当地空域管理规定。</p></div>
-      <div class="g-card reveal d2"><div class="ico">🏮</div><h4>顺游路线</h4><p>看完龙船赛，可顺访<b>濂溪故里 → 月岩 → 陈树湘烈士纪念园</b>，再以一桌道州扎肉、灰鹅收尾，方不负此行。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
+<!-- 页脚 -->
 <footer>
-  <div class="foot-grid">
-    <div>
-      <h5>道州龙船 · 百龙出征 一桨千年</h5>
-      <p>本页面为湖南省永州市道县龙舟赛文化宣传页。道州龙船习俗始于宋代，祭屈原、念周子，2021年列入第五批国家级非物质文化遗产代表性项目名录。每年端午，潇水河上百龙竞渡，诚邀四海宾朋共赴千年之约。</p>
-    </div>
-    <div>
-      <h5>资料来源</h5>
-      <ul>
-        <li><a href="https://www.ihchina.cn/project_details/23862" target="_blank">中国非物质文化遗产网 · 道州龙船习俗</a></li>
-        <li><a href="https://wlgtj.yzcity.gov.cn/wlgtj/whyc/202104/1ba55aaba3ec42319dea924220f637b0.shtml" target="_blank">永州市文旅广体局 · 道州龙船赛</a></li>
-        <li><a href="https://www.dx.gov.cn/" target="_blank">道县人民政府网</a></li>
-        <li><a href="http://www.hunan.gov.cn/hnszf/c101484/202108/t20210830_20409661.html" target="_blank">湖南省人民政府 · 濂溪故里</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>图片版权与说明</h5>
-      <p>本页配图均为道县龙舟赛及道县风物<b style="color:var(--red);">实景照片</b>，<b style="color:var(--red);">所有图片均来源于网络，仅作非商业用途</b>，版权归原作者与原发布机构所有（湖南日报、新湖南、中新网等），如有侵权请联系删除。延伸阅读：</p>
-      <ul style="margin-top:12px;">
-        <li><a href="https://www.dx.gov.cn/dx/yule/202410/3a551ab771494a9a802f5ab400da9f28.shtml" target="_blank">📷 道县政府网 · 道州龙船报道</a></li>
-        <li><a href="https://backend.chinanews.com/sh/2024/05-31/10226605.shtml" target="_blank">📷 中新网 · 「百龙出征」现场图集</a></li>
-        <li><a href="https://m.voc.com.cn/xhn/news/202405/20029272.html" target="_blank">📷 新湖南 · 水韵道县龙船影像</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="copyright">
-    鼓声三下红旗开 · 两龙跃出浮水来<br>
-    道州龙船文化宣传页 · 仅作文化推广展示之用 · ❤ 潇水河畔等你<br>
-    <b>本页所有图片来源于网络，非商业用途，版权归原作者所有</b>
-  </div>
+  <img class="f-logo" src="龙舟素材/logo_透明.png" alt="道县龙舟赛 logo">
+  <div class="brand">2026 道州龙船 · 潇水竞渡</div>
+  <p>湖南省永州市道县 · 端午节（道州龙船习俗）国家级非物质文化遗产</p>
+  <p class="legal">本页面图像素材来源于网络，仅作宣传展示，不做任何商业用途，版权归原作者所有。<br>如有侵权，请联系删除。</p>
 </footer>
 
-<!-- 灯箱 -->
-<div id="lightbox">
-  <span class="lb-x">×</span>
-  <img src="" alt="大图预览">
-  <div class="lb-cap"></div>
-</div>
-
-<button id="toTop" aria-label="回到顶部">↑</button>
-
 <script>
-/* ===== 导航 ===== */
-const nav=document.getElementById('nav'),toTop=document.getElementById('toTop');
-addEventListener('scroll',()=>{
-  const y=scrollY;
-  nav.classList.toggle('scrolled',y>60);
-  toTop.classList.toggle('show',y>700);
-},{passive:true});
-toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
-const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
-menuBtn.onclick=()=>navLinks.classList.toggle('open');
-navLinks.querySelectorAll('a').forEach(a=>a.onclick=()=>navLinks.classList.remove('open'));
+  // 滚动进入动画
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .t-item').forEach(el => io.observe(el));
 
-/* ===== 滚动显现 ===== */
-const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} }),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // 数字滚动
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = +el.dataset.count;
+      const suffix = el.dataset.suffix || '';
+      const t0 = performance.now(), dur = 1600;
+      (function tick(t) {
+        const p = Math.min((t - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.innerHTML = Math.round(target * eased) + '<small>' + suffix + '</small>';
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+      counterIO.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.num[data-count]').forEach(el => counterIO.observe(el));
 
-/* ===== 数字滚动 ===== */
-const cio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  const el=e.target,target=+el.dataset.target,dur=1800,t0=performance.now();
-  (function tick(t){
-    const p=Math.min((t-t0)/dur,1),ease=1-Math.pow(1-p,3);
-    el.textContent=Math.round(target*ease).toLocaleString();
-    if(p<1)requestAnimationFrame(tick);
-  })(t0);
-  cio.unobserve(el);
-}),{threshold:.6});
-document.querySelectorAll('.counter').forEach(el=>cio.observe(el));
-
-/* ===== 灯箱 ===== */
-const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lb-cap');
-document.querySelectorAll('.gal-item,.sch-img').forEach(it=>{
-  it.addEventListener('click',()=>{
-    const img=it.querySelector('img');
-    if(!img||img.classList.contains('broken'))return;
-    lbImg.src=img.src.replace(/w=\d+/,'w=2000');
-    lbCap.textContent=(it.querySelector('.cap')||{}).textContent||'';
-    lb.classList.add('open');document.body.style.overflow='hidden';
-  });
-});
-function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
-lb.onclick=e=>{if(e.target!==lbImg)closeLb();};
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
-
-/* ===== 图片加载失败兜底（替换为水墨占位） ===== */
-document.querySelectorAll('img').forEach(img=>{
-  img.addEventListener('error',()=>{
-    if(img.closest('#lightbox'))return;
-    img.classList.add('broken');
-    const ph=document.createElement('div');
-    ph.className='img-fallback';ph.textContent='龍舟';
-    img.parentNode.insertBefore(ph,img);
-  },{once:true});
-});
-
-/* ===== Hero 金色粒子（水面浮光） ===== */
-const cv=document.getElementById('particles'),ctx=cv.getContext('2d');
-let W,H,ps=[];
-function resize(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
-resize();addEventListener('resize',resize);
-const N=Math.min(70,innerWidth/16|0);
-for(let i=0;i<N;i++)ps.push({x:Math.random(),y:Math.random(),r:Math.random()*2.2+.6,s:Math.random()*.35+.08,o:Math.random()*.55+.18,ph:Math.random()*Math.PI*2});
-(function draw(t){
-  ctx.clearRect(0,0,W,H);
-  for(const p of ps){
-    p.y-=p.s/H*1.2; p.x+=Math.sin(t/1600+p.ph)*.00045;
-    if(p.y<-.02){p.y=1.02;p.x=Math.random();}
-    const tw=.5+.5*Math.sin(t/700+p.ph);
-    ctx.beginPath();
-    ctx.arc(p.x*W,p.y*H,p.r,0,7);
-    ctx.fillStyle=`rgba(240,210,138,${(p.o*tw).toFixed(3)})`;
-    ctx.shadowColor='rgba(240,210,138,.8)';ctx.shadowBlur=8;
-    ctx.fill();ctx.shadowBlur=0;
+  // 赛程时间轴进度线随滚动生长
+  const tl = document.getElementById('timeline');
+  const tlProgress = document.getElementById('tlProgress');
+  function updateTimeline() {
+    const r = tl.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const passed = Math.min(Math.max(vh * 0.72 - r.top, 0), r.height - 16);
+    tlProgress.style.height = passed + 'px';
   }
-  requestAnimationFrame(draw);
-})(0);
 
-/* ===== Hero 轻视差 ===== */
-const heroBg=document.querySelector('.hero-bg');
-addEventListener('scroll',()=>{
-  const y=scrollY;
-  if(y<innerHeight)heroBg.style.transform=`translateY(${y*.25}px) scale(${1+y/innerHeight*.05})`;
-},{passive:true});
+  // Hero 轻视差
+  const heroBg = document.getElementById('heroBg');
+
+  // 侧边导航高亮
+  const sections = ['top', 'intro', 'schedule', 'boats', 'culture', 'food'];
+  const sideLinks = document.querySelectorAll('#sideNav a');
+  function updateSideNav() {
+    const y = window.scrollY + window.innerHeight * 0.38;
+    let idx = 0;
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= y) idx = i;
+    });
+    sideLinks.forEach((a, i) => a.classList.toggle('active', i === idx));
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      if (sy < window.innerHeight) heroBg.style.transform = 'scale(1.12) translateY(' + sy * 0.18 + 'px)';
+      updateTimeline();
+      updateSideNav();
+      ticking = false;
+    });
+  }, { passive: true });
+  updateTimeline();
+  updateSideNav();
 </script>
 </body>
 </html>
