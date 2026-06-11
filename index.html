@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 湖南永州道县龙舟赛高级宣传单页，呈现道州龙船、潇水竞渡、道县人文与风味。">
+  <title>2026 道县龙舟赛 | 潇水竞渡 道州起潮</title>
+  <style>
+    :root {
+      --ink: #111115;
+      --night: #18232a;
+      --river: #0c6e74;
+      --river-2: #26b7bd;
+      --verm: #d8372f;
+      --gold: #f1b84b;
+      --rice: #f5efe2;
+      --bone: #fffaf0;
+      --muted: rgba(255, 250, 240, .72);
+      --line: rgba(255, 250, 240, .16);
+      --shadow: 0 28px 80px rgba(0, 0, 0, .34);
+      --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+      --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(216, 55, 47, .20), transparent 28rem),
+        radial-gradient(circle at 86% 18%, rgba(38, 183, 189, .18), transparent 30rem),
+        linear-gradient(180deg, #101013 0%, #17242a 42%, #f5efe2 42.1%, #f5efe2 100%);
+      color: var(--bone);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: .18;
+      mix-blend-mode: soft-light;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 7px 7px, 11px 11px;
+    }
+
+    .progress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--verm), var(--gold), var(--river-2));
+      box-shadow: 0 0 24px rgba(241, 184, 75, .6);
+    }
+
+    .nav {
+      position: fixed;
+      inset: 18px 18px auto 18px;
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px 12px 18px;
+      border: 1px solid rgba(255, 250, 240, .14);
+      border-radius: 24px;
+      background: rgba(17, 17, 21, .48);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .seal {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--verm), #961d1a);
+      color: var(--bone);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(216, 55, 47, .35);
+      transform: rotate(-6deg);
+      flex: 0 0 auto;
+    }
+    .brand strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+    .brand-text {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .16em;
+      white-space: nowrap;
+    }
+    .brand-text span {
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: rgba(255, 250, 240, .78);
+      font-size: 13px;
+      letter-spacing: .08em;
+      transition: .25s ease;
+    }
+    .nav-links a:hover {
+      color: var(--bone);
+      background: rgba(255, 250, 240, .10);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      transform: scale(1.04);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(17, 17, 21, .28) 0%, rgba(17, 17, 21, .44) 45%, rgba(17, 17, 21, .92) 100%),
+        radial-gradient(circle at 52% 34%, transparent 0 18rem, rgba(0, 0, 0, .34) 44rem);
+    }
+    @keyframes drift {
+      from { transform: scale(1.03) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-1.6%, -1.4%, 0); }
+    }
+    #waterfield {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      opacity: .55;
+      mix-blend-mode: screen;
+    }
+    .hero-content {
+      width: min(1180px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 150px 0 58px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+      opacity: .7;
+    }
+    .hero h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(54px, 9vw, 128px);
+      line-height: .98;
+      letter-spacing: .02em;
+      text-wrap: balance;
+    }
+    .shine {
+      background: linear-gradient(110deg, #fff 0%, #fff1bf 26%, #f1b84b 42%, #fff 58%, #fff 100%);
+      background-size: 220% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: shine 5.8s linear infinite;
+    }
+    @keyframes shine { to { background-position: 220% 0; } }
+    .hero-copy {
+      max-width: 780px;
+      margin: 28px 0 0;
+      color: rgba(255, 250, 240, .80);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.85;
+      letter-spacing: .04em;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid rgba(255, 250, 240, .18);
+      border-radius: 999px;
+      color: var(--bone);
+      background: rgba(255, 250, 240, .08);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--verm), #f46d3c);
+      box-shadow: 0 18px 50px rgba(216, 55, 47, .32);
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(241, 184, 75, .72); }
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 52px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 250, 240, .12);
+      background: rgba(255, 250, 240, .10);
+      backdrop-filter: blur(18px);
+    }
+    .metric {
+      min-height: 116px;
+      padding: 20px;
+      background: rgba(17, 17, 21, .38);
+    }
+    .metric b {
+      display: block;
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1;
+      color: var(--bone);
+      font-family: var(--serif);
+    }
+    .metric span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+
+    .section {
+      position: relative;
+      padding: 104px 0;
+    }
+    .dark { background: linear-gradient(180deg, #111115, #18232a); color: var(--bone); }
+    .light { background: var(--rice); color: #24201b; }
+    .wrap {
+      width: min(1180px, calc(100vw - 36px));
+      margin: 0 auto;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .7fr);
+      gap: 46px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--verm);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .24em;
+    }
+    .dark .kicker { color: var(--gold); }
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1.05;
+      letter-spacing: .02em;
+      text-wrap: balance;
+    }
+    .lead {
+      margin: 0;
+      color: rgba(36, 32, 27, .70);
+      line-height: 1.95;
+      font-size: 17px;
+    }
+    .dark .lead { color: rgba(255, 250, 240, .72); }
+
+    .race-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+    }
+    .feature-photo,
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      background: #222;
+      min-height: 320px;
+      transform-style: preserve-3d;
+    }
+    .feature-photo { min-height: 650px; }
+    .feature-photo::after,
+    .photo-card::after,
+    .story-card::after,
+    .food-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.74));
+      pointer-events: none;
+    }
+    .caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      color: var(--bone);
+    }
+    .caption small {
+      display: inline-flex;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+    .caption h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1.15;
+    }
+    .photo-stack {
+      display: grid;
+      gap: 20px;
+    }
+    .photo-card { min-height: 315px; }
+
+    .schedule-shell {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+    .schedule-intro {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+      min-height: 500px;
+      padding: 28px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17,17,21,.14), rgba(17,17,21,.82)),
+        url("龙舟素材/龙舟龙头.webp") center / cover;
+      color: var(--bone);
+      box-shadow: var(--shadow);
+    }
+    .schedule-intro h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 42px;
+      line-height: 1.08;
+    }
+    .schedule-intro p {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      margin: 0;
+      color: rgba(255, 250, 240, .76);
+      line-height: 1.9;
+    }
+    .schedule-proof {
+      display: grid;
+      grid-template-columns: minmax(280px, .82fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+    .schedule-image-card {
+      position: relative;
+      min-height: 560px;
+      padding: 22px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(216, 55, 47, .22), transparent 34%),
+        radial-gradient(circle at 82% 20%, rgba(38, 183, 189, .20), transparent 36%),
+        linear-gradient(145deg, #111115, #202f35);
+      box-shadow: var(--shadow);
+      color: var(--bone);
+    }
+    .schedule-image-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border: 1px solid rgba(255, 250, 240, .16);
+      border-radius: 29px;
+      pointer-events: none;
+    }
+    .schedule-image-card .tag {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(255, 250, 240, .08);
+      border: 1px solid rgba(255, 250, 240, .13);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    .schedule-shot {
+      position: relative;
+      z-index: 1;
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 24px;
+      background: rgba(255, 250, 240, .96);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .34);
+      transform: rotate(-1deg);
+    }
+    .schedule-shot img {
+      height: auto;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+    .schedule-note {
+      position: relative;
+      z-index: 2;
+      margin: 18px 4px 0;
+      color: rgba(255, 250, 240, .74);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .schedule-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .schedule-highlight {
+      min-height: 170px;
+      padding: 22px;
+      border-radius: 26px;
+      background: #171717;
+      color: var(--bone);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 18px 46px rgba(26, 22, 17, .14);
+    }
+    .schedule-highlight::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -60px;
+      top: -60px;
+      border-radius: 50%;
+      background: rgba(241, 184, 75, .20);
+    }
+    .schedule-highlight b {
+      display: block;
+      position: relative;
+      z-index: 1;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 42px;
+      line-height: 1;
+    }
+    .schedule-highlight span {
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
+      color: rgba(255, 250, 240, .78);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .event {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid rgba(36, 32, 27, .10);
+      border-radius: 28px;
+      background: rgba(255, 250, 240, .72);
+      box-shadow: 0 16px 40px rgba(40, 32, 24, .08);
+      overflow: hidden;
+    }
+    .date {
+      display: grid;
+      place-items: center;
+      min-height: 112px;
+      border-radius: 22px;
+      background: #121216;
+      color: var(--bone);
+      text-align: center;
+    }
+    .date b {
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1;
+    }
+    .date span {
+      margin-top: 6px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+    .event-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+    .event-main h4 {
+      margin: 0;
+      color: #191613;
+      font-size: clamp(18px, 2vw, 25px);
+      line-height: 1.34;
+    }
+    .slots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .slot {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: #312921;
+      background: #efe0c2;
+      border: 1px solid rgba(49, 41, 33, .08);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .slot.hot {
+      color: var(--bone);
+      background: linear-gradient(135deg, var(--verm), #f46d3c);
+      box-shadow: 0 10px 28px rgba(216, 55, 47, .22);
+    }
+
+    .marquee {
+      display: flex;
+      gap: 18px;
+      overflow: hidden;
+      padding: 28px 0;
+      background: #111115;
+      color: var(--bone);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 18px;
+      min-width: max-content;
+      animation: slide 28s linear infinite;
+    }
+    .marquee span {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 250, 240, .62);
+      font-family: var(--serif);
+      font-size: clamp(42px, 7vw, 90px);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .marquee b {
+      color: var(--gold);
+      -webkit-text-stroke: 0;
+    }
+    @keyframes slide { to { transform: translateX(-50%); } }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .story-card,
+    .food-card {
+      position: relative;
+      min-height: 430px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #333;
+      box-shadow: 0 18px 48px rgba(26, 22, 17, .14);
+    }
+    .story-card:nth-child(even) { margin-top: 42px; }
+    .story-card .caption h3,
+    .food-card .caption h3 { font-size: 28px; }
+    .caption p {
+      margin: 8px 0 0;
+      color: rgba(255, 250, 240, .76);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .food-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .food-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 560px;
+      padding: 32px;
+      border-radius: 30px;
+      background: #181815;
+      color: var(--bone);
+      overflow: hidden;
+      position: relative;
+    }
+    .food-copy::before {
+      content: "";
+      position: absolute;
+      inset: -40% 45% auto -30%;
+      height: 70%;
+      background: radial-gradient(circle, rgba(241,184,75,.28), transparent 62%);
+    }
+    .food-copy h2 { position: relative; font-size: clamp(42px, 5vw, 76px); }
+    .food-copy p {
+      position: relative;
+      color: rgba(255, 250, 240, .72);
+      line-height: 1.95;
+      font-size: 17px;
+      margin: 22px 0 0;
+    }
+    .taste-list {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .taste-list span {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 250, 240, .12);
+      color: rgba(255, 250, 240, .82);
+    }
+    .taste-list b { color: var(--gold); font-weight: 800; }
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    .food-card { min-height: 270px; }
+    .food-card.big {
+      grid-column: span 3;
+      min-height: 360px;
+    }
+    .food-card.small { grid-column: span 2; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 120px;
+      gap: 14px;
+    }
+    .gallery button {
+      position: relative;
+      grid-column: span 3;
+      grid-row: span 2;
+      padding: 0;
+      border: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #222;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .18);
+    }
+    .gallery button:nth-child(1),
+    .gallery button:nth-child(7) {
+      grid-column: span 6;
+      grid-row: span 3;
+    }
+    .gallery button:nth-child(4),
+    .gallery button:nth-child(9) {
+      grid-row: span 3;
+    }
+    .gallery button::after {
+      content: attr(aria-label);
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--bone);
+      background: rgba(17, 17, 21, .62);
+      backdrop-filter: blur(12px);
+      font-size: 13px;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .25s ease;
+    }
+    .gallery button:hover::after { opacity: 1; transform: translateY(0); }
+    .gallery img { transition: transform .7s ease, filter .4s ease; }
+    .gallery button:hover img { transform: scale(1.06); filter: saturate(1.12) contrast(1.03); }
+
+    .footer {
+      padding: 58px 0 42px;
+      background: #111115;
+      color: rgba(255, 250, 240, .70);
+    }
+    .footer-inner {
+      width: min(1180px, calc(100vw - 36px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+    }
+    .footer strong {
+      display: block;
+      color: var(--bone);
+      font-family: var(--serif);
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+    .sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+      max-width: 520px;
+    }
+    .sources a,
+    .sources span {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid rgba(255, 250, 240, .12);
+      border-radius: 999px;
+      background: rgba(255, 250, 240, .05);
+      font-size: 12px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      place-items: center;
+      padding: 28px;
+      background: rgba(8, 8, 10, .88);
+      backdrop-filter: blur(18px);
+    }
+    .lightbox.open { display: grid; }
+    .lightbox img {
+      width: min(1180px, 94vw);
+      height: min(78vh, 820px);
+      object-fit: contain;
+      border-radius: 24px;
+      box-shadow: 0 34px 100px rgba(0,0,0,.58);
+      background: #111;
+    }
+    .lightbox button {
+      position: fixed;
+      right: 24px;
+      top: 24px;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,250,240,.18);
+      border-radius: 50%;
+      color: var(--bone);
+      background: rgba(255,255,255,.08);
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 920px) {
+      .nav { inset: 10px 10px auto 10px; border-radius: 20px; }
+      .brand-text span { display: none; }
+      .nav-links { display: none; }
+      .hero-content { padding-top: 120px; }
+      .hero-strip,
+      .section-head,
+      .race-grid,
+      .schedule-proof,
+      .schedule-shell,
+      .food-layout,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-strip { border-radius: 22px; }
+      .metric { min-height: 94px; }
+      .feature-photo { min-height: 460px; }
+      .schedule-intro {
+        position: relative;
+        top: auto;
+        min-height: 360px;
+      }
+      .schedule-highlights { grid-template-columns: 1fr; }
+      .schedule-image-card { min-height: auto; }
+      .story-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-card:nth-child(even) { margin-top: 0; }
+      .food-card.big,
+      .food-card.small { grid-column: span 6; }
+      .gallery { grid-auto-rows: 92px; }
+      .gallery button,
+      .gallery button:nth-child(1),
+      .gallery button:nth-child(7),
+      .gallery button:nth-child(4),
+      .gallery button:nth-child(9) {
+        grid-column: span 6;
+        grid-row: span 2;
+      }
+      .sources { justify-content: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 50px; }
+      .eyebrow { letter-spacing: .16em; }
+      .eyebrow::before, .eyebrow::after { width: 24px; }
+      .section { padding: 72px 0; }
+      .event { grid-template-columns: 1fr; }
+      .date {
+        min-height: 72px;
+        display: flex;
+        gap: 10px;
+      }
+      .story-grid { grid-template-columns: 1fr; }
+      .food-grid { grid-template-columns: 1fr; }
+      .food-card.big,
+      .food-card.small { grid-column: auto; }
+      .gallery { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .gallery button,
+      .gallery button:nth-child(n) { grid-column: auto; grid-row: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="grain"></div>
+
+  <nav class="nav" aria-label="页面导航">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="seal">道</span>
+      <span class="brand-text">
+        <strong>道县龙舟赛</strong>
+        <span>YONGZHOU DAOXIAN DRAGON BOAT</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#race">竞渡现场</a></li>
+      <li><a href="#schedule">赛程</a></li>
+      <li><a href="#culture">人文</a></li>
+      <li><a href="#food">美食</a></li>
+      <li><a href="#gallery">图库</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-media"><img src="龙舟素材/龙舟潇水俯瞰.jpeg" alt="道县潇水河龙舟俯瞰盛况"></div>
+    <canvas id="waterfield" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="eyebrow reveal">2026 DAOXIAN · XIAOSHUI RIVER</div>
+      <h1 class="reveal"><span class="shine">潇水竞渡</span><br>道州起潮</h1>
+      <p class="hero-copy reveal">从国家级非遗“道州龙船习俗”到百舸争流的热血赛场，湖南永州道县把端午的鼓点、古城的人文、山水的清气与地道风味，一起推向浪尖。</p>
+      <div class="hero-actions reveal">
+        <a class="btn primary" href="#schedule">查看 2026 赛程</a>
+        <a class="btn" href="#gallery">进入高清图库</a>
+      </div>
+      <div class="hero-strip reveal" aria-label="赛事亮点">
+        <div class="metric"><b>6.11-6.17</b><span>七天高燃赛程</span></div>
+        <div class="metric"><b>3</b><span>三大赛事场次</span></div>
+        <div class="metric"><b>20</b><span>本地高清素材</span></div>
+        <div class="metric"><b>非遗</b><span>道州龙船习俗</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section dark" id="race">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">RACE MOMENT</div>
+            <h2>鼓声落下，整条河都在向前。</h2>
+          </div>
+          <p class="lead">龙头破浪、桨叶入水、岸边呐喊层层推高。页面用大图、滚动视差和轻量动效呈现龙舟赛的速度感，让观众先被场面击中，再顺着赛程和城市故事往下走。</p>
+        </div>
+        <div class="race-grid">
+          <article class="feature-photo tilt reveal">
+            <img src="龙舟素材/龙舟出征.jpeg" alt="龙舟队伍出征">
+            <div class="caption">
+              <small>出征</small>
+              <h3>一船一鼓，一城一心。</h3>
+            </div>
+          </article>
+          <div class="photo-stack">
+            <article class="photo-card tilt reveal">
+              <img src="龙舟素材/龙舟集结.webp" alt="多支龙舟集结">
+              <div class="caption">
+                <small>集结</small>
+                <h3>百龙列阵，潇水开场。</h3>
+              </div>
+            </article>
+            <article class="photo-card tilt reveal">
+              <img src="龙舟素材/龙舟队员.jpeg" alt="龙舟队员准备比赛">
+              <div class="caption">
+                <small>队员</small>
+                <h3>肌肉、节拍与同一口气。</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>DAOZHOU DRAGON BOAT</span><span><b>潇水竞渡</b></span><span>INTANGIBLE HERITAGE</span><span><b>道县见</b></span>
+        <span>DAOZHOU DRAGON BOAT</span><span><b>潇水竞渡</b></span><span>INTANGIBLE HERITAGE</span><span><b>道县见</b></span>
+      </div>
+    </div>
+
+    <section class="section light" id="schedule">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">SCHEDULE</div>
+            <h2>2026 年龙船赛场次时间表</h2>
+          </div>
+          <p class="lead">根据你提供的图片重新梳理为适合传播的赛程卡片。日期按 2026 年 6 月 11 日至 17 日呈现，具体执行以现场公告为准。</p>
+        </div>
+        <div class="schedule-proof">
+          <article class="schedule-image-card reveal">
+            <span class="tag">ORIGINAL SCHEDULE</span>
+            <div class="schedule-shot">
+              <img src="龙舟素材/赛程表.jpg" alt="2026 年龙船赛场次时间表原图">
+            </div>
+            <p class="schedule-note">保留微信赛程原图作为信息来源展示，并在右侧用数字卡片重新拆分重点，让移动端阅读更清楚。</p>
+          </article>
+          <div class="schedule-highlights reveal" aria-label="赛程摘要">
+            <div class="schedule-highlight"><b>6.11</b><span>2026 年中国龙舟公开赛开赛，上午与下午两段连贯展开。</span></div>
+            <div class="schedule-highlight"><b>6.13</b><span>“我要上龙超”湖南省龙舟超级联赛选拔赛道县站接棒登场。</span></div>
+            <div class="schedule-highlight"><b>6.15</b><span>国家非遗道州龙船赛传统龙船赛进入三日高燃阶段。</span></div>
+          </div>
+        </div>
+        <div class="schedule-shell">
+          <aside class="schedule-intro reveal">
+            <h3>七日连浪<br>三段递进</h3>
+            <p>公开赛打响声势，省级联赛选拔赛承接竞技热度，国家非遗道州传统龙船赛把道县本地民俗推向高潮。</p>
+          </aside>
+          <div class="timeline" aria-label="2026年龙船赛场次时间表">
+            <article class="event reveal">
+              <div class="date"><b>11</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>2026 年中国龙舟公开赛</h4>
+                <div class="slots"><span class="slot hot">上午 8:00-12:00</span><span class="slot hot">下午 13:30-18:00</span></div>
+              </div>
+            </article>
+            <article class="event reveal">
+              <div class="date"><b>12</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>2026 年中国龙舟公开赛</h4>
+                <div class="slots"><span class="slot hot">上午 8:00-12:00</span></div>
+              </div>
+            </article>
+            <article class="event reveal">
+              <div class="date"><b>13</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>“我要上龙超” · 2026 湖南省龙舟超级联赛选拔赛（道县站）</h4>
+                <div class="slots"><span class="slot">上午 9:30-12:00</span><span class="slot">下午 13:30-17:00</span></div>
+              </div>
+            </article>
+            <article class="event reveal">
+              <div class="date"><b>14</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>“我要上龙超” · 2026 湖南省龙舟超级联赛选拔赛（道县站）</h4>
+                <div class="slots"><span class="slot">上午 8:00-12:00</span></div>
+              </div>
+            </article>
+            <article class="event reveal">
+              <div class="date"><b>15</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>国家非遗道州龙船赛 · 传统龙船赛</h4>
+                <div class="slots"><span class="slot hot">下午 13:30-18:00</span></div>
+              </div>
+            </article>
+            <article class="event reveal">
+              <div class="date"><b>16</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>国家非遗道州龙船赛 · 传统龙船赛</h4>
+                <div class="slots"><span class="slot hot">下午 13:30-18:00</span></div>
+              </div>
+            </article>
+            <article class="event reveal">
+              <div class="date"><b>17</b><span>6月</span></div>
+              <div class="event-main">
+                <h4>国家非遗道州龙船赛 · 传统龙船赛</h4>
+                <div class="slots"><span class="slot hot">下午 13:30-18:00</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="culture">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">DAOXIAN CULTURE</div>
+            <h2>不止龙舟，道县本身就是一部山水人文史。</h2>
+          </div>
+          <p class="lead">道县古称道州，潇水穿城而过。这里有玉蟾岩的稻作文明线索、濂溪故里的理学气象、月岩的山水奇观，也有陈树湘烈士相关红色记忆。</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card reveal">
+            <img src="龙舟素材/玉蟾岩.webp" alt="道县玉蟾岩">
+            <div class="caption">
+              <small>天下谷源</small>
+              <h3>玉蟾岩</h3>
+              <p>从洞穴遗址看见早期稻作文明的深远回声。</p>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img src="龙舟素材/濂溪故里.webp" alt="道县濂溪故里">
+            <div class="caption">
+              <small>理学文脉</small>
+              <h3>濂溪故里</h3>
+              <p>周敦颐文脉与道州山水，共同构成城市气质。</p>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img src="龙舟素材/月岩.webp" alt="道县月岩">
+            <div class="caption">
+              <small>山水胜境</small>
+              <h3>月岩</h3>
+              <p>石月临空，清幽开阔，是道县山水的另一种速度。</p>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img src="龙舟素材/陈树湘.webp" alt="陈树湘烈士相关纪念地">
+            <div class="caption">
+              <small>红色记忆</small>
+              <h3>陈树湘</h3>
+              <p>以信念照亮土地，让热血与今日鼓点遥相呼应。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="food">
+      <div class="wrap food-layout">
+        <aside class="food-copy reveal">
+          <div>
+            <div class="kicker">LOCAL TASTE</div>
+            <h2>看完龙舟，继续吃懂道县。</h2>
+            <p>道县的味道很有现场感：扎肉厚实、灰鹅鲜香、枕头粑朴拙有嚼劲，麻仁泡和红瓜子适合带走，也适合在赛后慢慢回味。</p>
+          </div>
+          <div class="taste-list">
+            <span><b>烟火主菜</b>道州扎肉 · 道州灰鹅</span>
+            <span><b>手作小吃</b>枕头粑 · 麻仁泡</span>
+            <span><b>伴手风物</b>红瓜子 · 道县风味</span>
+          </div>
+        </aside>
+        <div class="food-grid">
+          <article class="food-card big reveal">
+            <img src="龙舟素材/灰鹅.webp" alt="道县灰鹅">
+            <div class="caption"><small>道州灰鹅</small><h3>鲜香压轴</h3></div>
+          </article>
+          <article class="food-card big reveal">
+            <img src="龙舟素材/扎肉.jpeg" alt="道县扎肉">
+            <div class="caption"><small>道州扎肉</small><h3>热烈下饭</h3></div>
+          </article>
+          <article class="food-card small reveal">
+            <img src="龙舟素材/麻仁泡.jpg" alt="道县麻仁泡">
+            <div class="caption"><small>麻仁泡</small><h3>酥香</h3></div>
+          </article>
+          <article class="food-card small reveal">
+            <img src="龙舟素材/枕头粑.webp" alt="道县枕头粑">
+            <div class="caption"><small>枕头粑</small><h3>软糯</h3></div>
+          </article>
+          <article class="food-card small reveal">
+            <img src="龙舟素材/红瓜子.png" alt="道县红瓜子">
+            <div class="caption"><small>红瓜子</small><h3>手信</h3></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="gallery">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">GALLERY</div>
+            <h2>高清龙舟图库，一屏接一屏燃起来。</h2>
+          </div>
+          <p class="lead">所有图片均来自桌面“龙舟素材”文件夹。点击任意图片可放大查看，适合现场大屏、招商展示或社交传播二次截取。</p>
+        </div>
+        <div class="gallery reveal" id="galleryGrid">
+          <button aria-label="潇水俯瞰"><img src="龙舟素材/龙舟潇水俯瞰.jpeg" alt="潇水俯瞰"></button>
+          <button aria-label="龙舟主图"><img src="龙舟素材/龙舟主图.webp" alt="龙舟主图"></button>
+          <button aria-label="龙舟盛况"><img src="龙舟素材/龙舟盛况.webp" alt="龙舟盛况"></button>
+          <button aria-label="龙头特写"><img src="龙舟素材/龙舟龙头.webp" alt="龙头特写"></button>
+          <button aria-label="龙舟队伍"><img src="龙舟素材/龙舟队伍.webp" alt="龙舟队伍"></button>
+          <button aria-label="龙舟远景"><img src="龙舟素材/龙舟远景.jpeg" alt="龙舟远景"></button>
+          <button aria-label="龙舟出征"><img src="龙舟素材/龙舟出征.jpeg" alt="龙舟出征"></button>
+          <button aria-label="龙舟集结"><img src="龙舟素材/龙舟集结.webp" alt="龙舟集结"></button>
+          <button aria-label="队员特写"><img src="龙舟素材/龙舟队员2.jpeg" alt="队员特写"></button>
+          <button aria-label="龙舟竞渡"><img src="龙舟素材/龙舟2.jpg" alt="龙舟竞渡"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>道县见，听潇水再起一阵鼓。</strong>
+        <div>页面图片：本地“龙舟素材”文件夹；赛程：按用户提供时间表整理。</div>
+      </div>
+      <div class="sources" aria-label="资料参考">
+        <span>资料参考</span>
+        <a href="https://www.gov.cn/zhengce/content/2021-06/10/content_5616457.htm" target="_blank" rel="noopener">第五批国家级非遗名录</a>
+        <a href="https://www.ihchina.cn/" target="_blank" rel="noopener">中国非物质文化遗产网</a>
+        <a href="https://www.dx.gov.cn/" target="_blank" rel="noopener">道县政府公开信息</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" id="closeLightbox" aria-label="关闭">×</button>
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const revealEls = document.querySelectorAll(".reveal");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = lightbox.querySelector("img");
+    const closeLightbox = document.getElementById("closeLightbox");
+
+    function updateProgress() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = `${Math.min(1, Math.max(0, ratio)) * 100}%`;
+    }
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("in");
+      });
+    }, { threshold: .14 });
+    revealEls.forEach((el) => observer.observe(el));
+
+    document.querySelectorAll(".tilt").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        card.style.transform = `rotateX(${y * -5}deg) rotateY(${x * 6}deg) translateY(-3px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+
+    document.getElementById("galleryGrid").addEventListener("click", (event) => {
+      const button = event.target.closest("button");
+      if (!button) return;
+      const img = button.querySelector("img");
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+    });
+    function hideLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+    }
+    closeLightbox.addEventListener("click", hideLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) hideLightbox();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") hideLightbox();
+    });
+
+    const canvas = document.getElementById("waterfield");
+    const ctx = canvas.getContext("2d");
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let particles = [];
+
+    function resizeCanvas() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.max(56, Math.floor(width / 20));
+      particles = Array.from({ length: count }, (_, index) => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        len: 26 + Math.random() * 92,
+        speed: .35 + Math.random() * 1.2,
+        alpha: .16 + Math.random() * .35,
+        phase: index * .23
+      }));
+    }
+
+    function drawWater(time) {
+      ctx.clearRect(0, 0, width, height);
+      ctx.lineCap = "round";
+      particles.forEach((p) => {
+        p.x += p.speed;
+        p.y += Math.sin(time * .0014 + p.phase) * .22;
+        if (p.x - p.len > width) {
+          p.x = -p.len;
+          p.y = Math.random() * height;
+        }
+        const hue = p.y < height * .52 ? "255, 248, 210" : "38, 183, 189";
+        ctx.strokeStyle = `rgba(${hue}, ${p.alpha})`;
+        ctx.lineWidth = p.y < height * .50 ? 1 : 1.6;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.x + p.len, p.y + Math.sin(time * .002 + p.phase) * 8);
+        ctx.stroke();
+      });
+      requestAnimationFrame(drawWater);
+    }
+
+    window.addEventListener("resize", resizeCanvas, { passive: true });
+    resizeCanvas();
+    requestAnimationFrame(drawWater);
+  </script>
+</body>
+</html>
