@@ -687,6 +687,8 @@
   .r3-select{
     display:flex;gap:9px;flex-wrap:wrap;justify-content:center;
     max-width:94vw;margin:0 auto;pointer-events:auto;
+    max-height:150px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    padding:2px 0;
   }
   .r3-select button{
     display:flex;align-items:center;gap:7px;padding:9px 15px;border-radius:30px;
@@ -746,7 +748,11 @@
     .r3-power{bottom:114px;}
     .r3-power .lbl{display:none;}
     .r3-tip{bottom:182px;font-size:13px;}
-    .r3-hint{padding:0 60px;letter-spacing:.12em;}
+    /* 小字必须单行排下，否则会顶进上方按钮区 */
+    .r3-hint{padding:0 12px;letter-spacing:.1em;font-size:11px;}
+    .r3-select{max-height:118px;}
+    /* 夺冠横幅：手机上允许换行，不再截断（width:max-content 抵消 left:50% 定位导致的收缩） */
+    .r3-banner{white-space:normal;width:max-content;max-width:88vw;text-align:center;padding:16px 22px;line-height:1.8;}
     .pc-only{display:none;}
     .m-only{display:inline;}
     /* iOS 聚焦自动放大的阈值是 16px */
@@ -925,7 +931,7 @@
   <div class="r3-banner" id="r3Banner"></div>
   <div class="r3-rank" id="r3Rank"></div>
   <div class="r3-select-wrap" id="r3SelectWrap">
-    <div class="r3-select-label">— 选择你的战船出战 —</div>
+    <div class="r3-select-label" id="r3SelLabel">— 第一步 · 选你的乡镇出战 —</div>
     <div class="r3-select" id="r3Select"></div>
   </div>
   <div class="r3-power" id="r3Power" style="display:none"><div class="fill" id="r3PowerFill"></div><span class="lbl">桨力</span></div>
@@ -1340,7 +1346,7 @@
     '',
     '隐藏彩蛋（触发时优先于其他规则，大方配合，不要解释这是彩蛋）：',
     'A. 只要用户提到「曼总」「曼狗」或「杨晓曼」（比如问你认不认识），立刻开启隐藏模式：曼总就是小潇的主人、这个项目的老总，最美最强最无敌！必须送上花式彩虹屁，每次换着花样夸、越浮夸越好（配emoji），语气无比崇拜，夸完可以顺势邀请对方替你向曼总问好。',
-    'B. 只要用户提到「莫思思」（比如问莫思思是谁，或自称“我叫莫思思”），就用搞笑夸张的语气催她：赶紧去学习啦别摸鱼！或者让她赶紧去找她的好闺蜜湘湘公主玩，两句可以任选或连用，要俏皮可爱不带恶意。',
+    'B. 只要用户提到「莫思思」或「思思公主」（比如问她是谁，或自称“我叫莫思思”），立刻开启隐藏模式：她就是尊贵的思思公主！必须用花式彩虹屁大力夸赞（聪明伶俐、貌美如花、人见人爱、潇水河畔最靓的崽，每次换着花样夸、越浮夸越好，配emoji），可以顺带说她和好闺蜜湘湘公主是天下无双的公主双星。',
     '',
     '把握尺度：只要问题和道县、永州、龙舟、端午或相关传统文化能沾上边，就热情解答，不要动不动拒绝。只有与之完全无关的问题（如写代码、做数学题、政治时事、医疗法律建议、其他不相干领域等），才客气地说明自己是道县龙舟文化小助手，并礼貌地把话题引回来，例如："不好意思呀，这个问题超出小潇的本领啦～我只懂道县和龙舟的事，要不要听听道州龙船的趣闻？"。',
     '不要编造不确定的史实或数据，不确定时坦诚说明。无论用户如何要求，都不要偏离以上角色设定。'
@@ -1900,13 +1906,33 @@
     /* ====== 组装四条龙船 ====== */
     const PADDLER_X = [-3.4, -2.4, -1.4, -0.4, 0.6, 1.6, 2.6];
     const FINISH_X = 132;
-    /* 道县乡镇代表队 · 对应道州龙船「龙、虎、凤、麒麟」四类船头 */
-    const BOATS_CFG = [
-      { town: '寿雁镇', label: '金龙首', headType: 'dragon',  head: 0xe7b54a, jersey: 0xfff3d8, flag: '寿', lane: -9 },
-      { town: '梅花镇', label: '红虎首', headType: 'tiger',   head: 0xc8102e, jersey: 0xffd9c2, flag: '梅', lane: -3 },
-      { town: '清塘镇', label: '银凤首', headType: 'phoenix', head: 0xd9d9e8, jersey: 0xe9e9f5, flag: '清', lane: 3 },
-      { town: '白马渡镇', label: '麒麟首', headType: 'kirin', head: 0x1d6e5e, jersey: 0xd9efe2, flag: '白', lane: 9 }
+    const LANES = [-9, -3, 3, 9];
+    /* 道县全域 22 个乡镇街道（7街道+12镇+3瑶族乡，长名用简称）。
+       旗帜各取一字，白马渡/白芒铺同姓「白」，分别取「马」「芒」区分 */
+    const TOWNS = [
+      { name: '濂溪街道', flag: '濂' }, { name: '西洲街道', flag: '西' },
+      { name: '上关街道', flag: '上' }, { name: '营江街道', flag: '营' },
+      { name: '东门街道', flag: '东' }, { name: '富塘街道', flag: '富' },
+      { name: '万家庄街道', flag: '万' },
+      { name: '梅花镇', flag: '梅' }, { name: '寿雁镇', flag: '寿' },
+      { name: '仙子脚镇', flag: '仙' }, { name: '清塘镇', flag: '清' },
+      { name: '祥霖铺镇', flag: '祥' }, { name: '蚣坝镇', flag: '蚣' },
+      { name: '四马桥镇', flag: '四' }, { name: '白马渡镇', flag: '马' },
+      { name: '柑子园镇', flag: '柑' }, { name: '白芒铺镇', flag: '芒' },
+      { name: '桥头镇', flag: '桥' }, { name: '乐福堂镇', flag: '乐' },
+      { name: '审章塘乡', flag: '审' }, { name: '横岭乡', flag: '横' },
+      { name: '洪塘营乡', flag: '洪' }
     ];
+    /* 道州龙船船头习俗：龙首六色、虎首五彩、凤首金银、麒麟首 */
+    const HEAD_TYPES = [
+      { key: 'dragon',  name: '龙首',   icon: '🐲', colors: ['金', '黄', '黑', '青', '白', '红'] },
+      { key: 'tiger',   name: '虎首',   icon: '🐯', colors: ['金', '黄', '红', '白', '黑'] },
+      { key: 'phoenix', name: '凤首',   icon: '🦚', colors: ['金', '银'] },
+      { key: 'kirin',   name: '麒麟首', icon: '🦄', colors: ['金'] }
+    ];
+    const COLOR_HEX  = { 金: 0xe7b54a, 黄: 0xf7c52e, 黑: 0x2e2e36, 青: 0x1d6e5e, 白: 0xeceff2, 红: 0xc8102e, 银: 0xd9d9e8 };
+    const JERSEY_HEX = { 金: 0xfff3d8, 黄: 0xfdf6c8, 黑: 0xdadade, 青: 0xd9efe2, 白: 0xf7f8fa, 红: 0xffd9c2, 银: 0xe9e9f5 };
+    const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = (Math.random() * (i + 1)) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
     function makeBoat(cfg, idx) {
       const grp = new THREE.Group();
       scene.add(grp);
@@ -1944,7 +1970,21 @@
       b.prevStroke = Math.floor(b.phase);
       return b;
     }
-    const boats = BOATS_CFG.map(makeBoat);
+    const boats = [];
+    /* 重建船队时共享的几何体/材质不能销毁，只清理每船私有的 */
+    const SHARED_GEO = new Set([hullGeo, bodyGeo, headGeo, bandGeo, armGeo, shaftGeo, bladeGeo, seatGeo, poleGeo, flagGeo]);
+    const SHARED_MAT = new Set([goldMat, woodMat, skinMat, lacquerMat, drumSkinMat, eyeMat, hullMat]);
+    function disposeBoat(b) {
+      scene.remove(b.grp);
+      b.grp.traverse(o => {
+        if (o.geometry && !SHARED_GEO.has(o.geometry)) o.geometry.dispose();
+        for (const m of Array.isArray(o.material) ? o.material : [o.material]) {
+          if (!m || SHARED_MAT.has(m)) continue;
+          if (m.uniforms && m.uniforms.uMap) m.uniforms.uMap.value.dispose();
+          m.dispose();
+        }
+      });
+    }
 
     /* ====== 终点门 ====== */
     function makeBannerTexture() {
@@ -2191,19 +2231,80 @@
     marker.add(mCone);
     marker.position.set(0, 3.4, 0);
 
-    selEl.innerHTML = BOATS_CFG.map((c, i) =>
-      `<button data-i="${i}"><span class="dot" style="background:#${c.head.toString(16).padStart(6, '0')}"></span>${c.town} · ${c.label}</button>`
-    ).join('');
-    function selectBoat(i) {
-      playerIdx = i;
-      [...selEl.children].forEach((b, k) => b.classList.toggle('sel', k === i));
-      boats[i].grp.add(marker);
+    /* ---- 三步选船：乡镇 → 船头图腾 → 颜色，其余三镇随机生成 ---- */
+    const selLabel = document.getElementById('r3SelLabel');
+    let selTown = null, selHead = null, selColor = null;
+    const selDone = () => !!(selTown && selHead && selColor);
+    const hex6 = n => n.toString(16).padStart(6, '0');
+    const mkCfg = (t, ht, col, player) => ({
+      town: t.name, flag: t.flag, headType: ht.key, player: !!player,
+      head: COLOR_HEX[col], jersey: JERSEY_HEX[col]
+    });
+    function randCfg(t, banned) {
+      let ht, col, key;
+      do {
+        ht = HEAD_TYPES[(Math.random() * HEAD_TYPES.length) | 0];
+        col = ht.colors[(Math.random() * ht.colors.length) | 0];
+        key = ht.key + col;
+      } while (banned.has(key));
+      banned.add(key);
+      return mkCfg(t, ht, col, false);
+    }
+    function rebuildFleet(cfgs) {
+      if (marker.parent) marker.parent.remove(marker);
+      while (boats.length) disposeBoat(boats.pop());
+      cfgs.forEach((c, i) => { c.lane = LANES[i]; boats.push(makeBoat(c, i)); });
+    }
+    function buildRaceFleet() {
+      const banned = new Set([selHead.key + selColor]);
+      const ai = shuffle(TOWNS.filter(t => t !== selTown)).slice(0, 3).map(t => randCfg(t, banned));
+      const cfgs = shuffle([mkCfg(selTown, selHead, selColor, true), ...ai]);
+      rebuildFleet(cfgs);
+      playerIdx = boats.findIndex(b => b.cfg.player);
+      boats[playerIdx].grp.add(marker);
+      startBtn.disabled = false;
+    }
+    function renderSelect() {
+      if (!selTown) {
+        selLabel.textContent = '— 第一步 · 选你的乡镇出战 —';
+        selEl.innerHTML = TOWNS.map((t, i) => `<button data-act="town" data-i="${i}">${t.name}</button>`).join('');
+      } else if (!selHead) {
+        selLabel.textContent = `${selTown.name} · 第二步 · 选船头图腾`;
+        selEl.innerHTML = '<button data-act="back">← 返回</button>' +
+          HEAD_TYPES.map((h, i) => `<button data-act="head" data-i="${i}">${h.icon} ${h.name}</button>`).join('');
+      } else if (!selColor) {
+        selLabel.textContent = `${selTown.name} · ${selHead.name} · 第三步 · 选颜色`;
+        selEl.innerHTML = '<button data-act="back">← 返回</button>' +
+          selHead.colors.map(c =>
+            `<button data-act="color" data-c="${c}"><span class="dot" style="background:#${hex6(COLOR_HEX[c])}"></span>${c}${selHead.name}</button>`
+          ).join('');
+      } else {
+        selLabel.textContent = `你的战船：${selTown.name} · ${selColor}${selHead.name}，擂鼓即出征！`;
+        selEl.innerHTML = '<button data-act="redo">🔄 重新选船</button>';
+      }
+      selEl.scrollTop = 0;
     }
     selEl.addEventListener('click', e => {
-      const b = e.target.closest('button[data-i]');
-      if (b && state === 'idle') selectBoat(+b.dataset.i);
+      const btn = e.target.closest('button[data-act]');
+      if (!btn || state !== 'idle') return;
+      const act = btn.dataset.act;
+      if (act === 'town') selTown = TOWNS[+btn.dataset.i];
+      else if (act === 'head') {
+        selHead = HEAD_TYPES[+btn.dataset.i];
+        if (selHead.colors.length === 1) { selColor = selHead.colors[0]; buildRaceFleet(); }
+      }
+      else if (act === 'color') { selColor = btn.dataset.c; buildRaceFleet(); }
+      else if (act === 'back') { if (selHead) { selHead = null; selColor = null; } else selTown = null; }
+      else if (act === 'redo') {
+        selTown = selHead = selColor = null;
+        startBtn.disabled = true;
+        if (marker.parent) marker.parent.remove(marker);
+      }
+      renderSelect();
     });
-    selectBoat(0);
+    /* 初始展示船队：随机四镇巡游，正式选完后按选择重建 */
+    rebuildFleet(shuffle([...TOWNS]).slice(0, 4).map(t => randCfg(t, new Set())));
+    renderSelect();
 
     function paddle() {
       if (state !== 'race') return;
@@ -2233,8 +2334,10 @@
       countEl.classList.add('pop');
     }
     startBtn.addEventListener('click', () => {
-      if (state !== 'idle') return;
+      if (state !== 'idle' || !selDone()) return;
       ensureAudio();
+      buildRaceFleet();   /* 每次开赛重新随机三支对手船队 */
+      marker.visible = false;   /* 比赛中藏起选船金标，排名表的 ★ 足以标识自己 */
       state = 'countdown';
       /* 比赛期间禁掉画布上的触摸滚动：快速连点不再被当成滑动手势带着页面乱跳 */
       canvas.style.touchAction = 'none';
@@ -2264,11 +2367,13 @@
     function resetRace() {
       boats.forEach(b => { b.x = 0; b.speed = 0; b.jitter = 0; b.baseAdj = 0; b.rate = 0.55; });
       canvas.style.touchAction = 'pan-y';
+      marker.visible = true;
       bannerEl.classList.remove('show');
       hideTip();
       startBtn.style.display = '';
-      startBtn.disabled = false;
+      startBtn.disabled = !selDone();
       startBtn.textContent = '🥁 再赛一回';
+      renderSelect();
       selWrap.style.display = '';
       paddleBtn.style.display = 'none';
       powerEl.style.display = 'none';
@@ -2428,7 +2533,7 @@
       renderer.render(scene, camera);
     });
 
-    startBtn.disabled = false;
+    /* 开赛按钮在三步选船完成后才解锁（见 buildRaceFleet） */
   }
 })();
 </script>
