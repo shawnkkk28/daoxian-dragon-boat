@@ -30,6 +30,7 @@
   .side-nav{
     position:fixed;right:22px;top:50%;transform:translateY(-50%);
     z-index:999;display:flex;flex-direction:column;gap:16px;
+    transition:opacity .35s;
   }
   .side-nav .rail{
     position:absolute;right:7px;width:2px;
@@ -792,8 +793,9 @@
   /* ============ 响应式 ============ */
   @media (max-width:980px){
     .side-nav{right:10px;}
-    /* 3D 竞渡占屏时收起助手按钮、面板与回顶按钮，避免遮挡选船按钮、桨力条和静音键 */
-    body.r3-in .ai-fab,body.r3-in .ai-panel,body.r3-in .to-top{opacity:0;pointer-events:none;}
+    /* 3D 竞渡占屏时收起助手按钮、面板、回顶按钮和右侧导航圆点，避免遮挡 UI、误触锚点跳转 */
+    body.r3-in .ai-fab,body.r3-in .ai-panel,body.r3-in .to-top,
+    body.r3-in .side-nav{opacity:0;pointer-events:none;}
     .intro-grid{grid-template-columns:1fr;}
     .stats{grid-template-columns:repeat(2,1fr);}
     .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}
@@ -2234,6 +2236,8 @@
       if (state !== 'idle') return;
       ensureAudio();
       state = 'countdown';
+      /* 比赛期间禁掉画布上的触摸滚动：快速连点不再被当成滑动手势带着页面乱跳 */
+      canvas.style.touchAction = 'none';
       startBtn.style.display = 'none';
       selWrap.style.display = 'none';
       paddleBtn.style.display = '';
@@ -2259,6 +2263,7 @@
     });
     function resetRace() {
       boats.forEach(b => { b.x = 0; b.speed = 0; b.jitter = 0; b.baseAdj = 0; b.rate = 0.55; });
+      canvas.style.touchAction = 'pan-y';
       bannerEl.classList.remove('show');
       hideTip();
       startBtn.style.display = '';
@@ -2377,11 +2382,25 @@
 
       if (state === 'race' || state === 'finish') {
         const L = boats[playerIdx];
-        camPos.lerp(tmpV.set(L.x - 7.5, 5.3, 16.5), 1 - Math.exp(-2.4 * dt));
         const sh = state === 'race' ? 0.06 : 0.02;
-        camera.position.set(camPos.x + rnd(sh), camPos.y + rnd(sh), camPos.z);
-        camera.lookAt(L.x + 4, 1, L.lane * 0.4);
+        const portrait = camera.aspect < 0.9;
+        const wantFov = portrait ? 70 : 55;
+        if (camera.fov !== wantFov) { camera.fov = wantFov; camera.updateProjectionMatrix(); }
+        if (portrait) {
+          /* 竖屏：侧拍装不下船身，改从船队正后方追拍——四条赛道横向排开。
+             距离按水平视野反推，保证最外侧两条赛道（±9 + 船宽）都在画面内 */
+          const tanH = Math.tan(camera.fov * Math.PI / 360) * camera.aspect;
+          const back = Math.min(36, Math.max(20, 10.8 / tanH));
+          camPos.lerp(tmpV.set(L.x - back, 6.5 + back * 0.14, 0), 1 - Math.exp(-2.4 * dt));
+          camera.position.set(camPos.x + rnd(sh), camPos.y + rnd(sh), camPos.z + rnd(sh));
+          camera.lookAt(L.x + back * 0.35, 0.6, 0);
+        } else {
+          camPos.lerp(tmpV.set(L.x - 7.5, 5.3, 16.5), 1 - Math.exp(-2.4 * dt));
+          camera.position.set(camPos.x + rnd(sh), camPos.y + rnd(sh), camPos.z);
+          camera.lookAt(L.x + 4, 1, L.lane * 0.4);
+        }
       } else {
+        if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix(); }
         orbit.apply(dt, t);
       }
 
